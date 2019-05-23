@@ -394,4 +394,22 @@ CLOCKMEM  ck3 ( .CLK(MIPI_PIXEL_CLK_)   ,.CLK_FREQ  (25000000  ) , . CK_1HZ (D8M
 
 //assign LEDR = { D8M_CK_HZ ,D8M_CK_HZ2,D8M_CK_HZ3 ,5'h0,CAMERA_MIPI_RELAESE ,MIPI_BRIDGE_RELEASE  } ; 
 
+wire button_left, button_right, button_middle, PS2_DAT;
+wire [4:0] bin_x, bin_y;
+//add the mouse to be displayed on the monitor
+ps2 mouse(.start(1'b1),         // transmit instrucions to device
+		.reset(KEY[2]),         // FSM reset signal
+		.CLOCK_50,      //clock source
+		.PS2_CLK(CLOCK_50),       //ps2_clock signal inout
+		.PS2_DAT,       //ps2_data  signal inout
+		.button_left,   //left button press display
+		.button_right,  //right button press display
+		.button_middle, //middle button press display
+		.bin_x,         //binned X position with hysteresis
+		.bin_y        );
+
+
+
 endmodule
+
+
