@@ -260,14 +260,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "PS2_CLK",
-					"strict" : false
-				},
-				{
-					"name" : "PS2_DAT",
-					"strict" : false
-				},
-				{
 					"name" : "CAMERA_I2C_SDA",
 					"strict" : false
 				},
@@ -353,6 +345,10 @@
 				},
 				{
 					"name" : "SW[9]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[8]",
 					"strict" : false
 				},
 				{

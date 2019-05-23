@@ -269,7 +269,7 @@ Sdram_Control	   u7	(	//	HOST Side
 							.CLK         ( SDRAM_CTRL_CLK ) , 
 							//	FIFO Write Side 1
 							.WR1_DATA    ( LUT_MIPI_PIXEL_D[9:0] ),
-							.WR1         ( LUT_MIPI_PIXEL_HS & LUT_MIPI_PIXEL_VS ) ,
+							.WR1         ( LUT_MIPI_PIXEL_HS & LUT_MIPI_PIXEL_VS & freeze) ,
 							
 							.WR1_ADDR    ( 0 ),
                      .WR1_MAX_ADDR( 640*480 ),
@@ -394,21 +394,22 @@ CLOCKMEM  ck3 ( .CLK(MIPI_PIXEL_CLK_)   ,.CLK_FREQ  (25000000  ) , . CK_1HZ (D8M
 
 //assign LEDR = { D8M_CK_HZ ,D8M_CK_HZ2,D8M_CK_HZ3 ,5'h0,CAMERA_MIPI_RELAESE ,MIPI_BRIDGE_RELEASE  } ; 
 
-wire button_left, button_right, button_middle, PS2_DAT;
-wire [4:0] bin_x, bin_y;
+wire button_left, button_right, button_middle;
+wire [9:0] bin_x, bin_y;
 //add the mouse to be displayed on the monitor
 ps2 mouse(.start(1'b1),         // transmit instrucions to device
 		.reset(KEY[2]),         // FSM reset signal
-		.CLOCK_50,      //clock source
-		.PS2_CLK(CLOCK_50),       //ps2_clock signal inout
-		.PS2_DAT,       //ps2_data  signal inout
-		.button_left,   //left button press display
-		.button_right,  //right button press display
-		.button_middle, //middle button press display
-		.bin_x,         //binned X position with hysteresis
-		.bin_y        );
+		.CLOCK_50(CLOCK_50),      //clock source
+		//.PS2_CLK(PS2_CLK),       //ps2_clock signal inout
+		//.PS2_DAT(PS2_DAT),       //ps2_data  signal inout
+		.button_left(button_left),   //left button press display
+		.button_right(button_right),  //right button press display
+		.button_middle(button_middle), //middle button press display
+		.bin_x(bin_x),         //binned X position with hysteresis
+		.bin_y(bin_y)        );
 
-
+wire freeze;
+inputff freeze_frame (.clk(CLOCK_50), .reset(~KEY[2]), .in(~SW[8]), .out(freeze));
 
 endmodule
 
