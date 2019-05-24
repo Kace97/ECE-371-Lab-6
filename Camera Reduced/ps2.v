@@ -40,8 +40,8 @@
 // --------------------------------------------------------------------
 module ps2
 	#(
-		parameter WIDTH = 20,
-		parameter HEIGHT = 20,
+		parameter WIDTH = 640,
+		parameter HEIGHT = 480,
 		parameter BIN = 10,
 		parameter HYSTERESIS = 3
 	)

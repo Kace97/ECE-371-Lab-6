@@ -547,6 +547,7 @@ set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
 
 
 
+set_global_assignment -name SYSTEMVERILOG_FILE color_choosing.sv
 set_global_assignment -name SDC_FILE DE1_SOC_D8M_RTL.sdc
 set_global_assignment -name VERILOG_FILE keyboard_scancoderaw_driver.v
 set_global_assignment -name VERILOG_FILE keyboard_press_driver.v

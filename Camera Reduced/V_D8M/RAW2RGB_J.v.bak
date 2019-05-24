@@ -6,8 +6,7 @@ input			    RST,
 input           VGA_CLK, 
 input           READ_Request ,
 input           VGA_VS ,	
-input           VGA_HS ,	
-input				 mouse_overwrite, 
+input           VGA_HS ,	 
 output	[7:0] oRed,
 output 	[7:0] oGreen,
 output	[7:0] oBlue
@@ -27,9 +26,9 @@ wire	[10:0]	mY_Cont;
 
 
 //-------- RGB OUT ---- 
-assign   oRed	 = mouse_overwrite ? 8'hFF : mCCD_R[9:2];
-assign  oGreen  = mouse_overwrite ? 8'hFF : mCCD_G[9:2];
-assign	oBlue	 = mouse_overwrite ? 8'hFF : mCCD_B[9:2];
+assign   oRed	 = mCCD_R[9:2];
+assign  oGreen  = mCCD_G[9:2] ;
+assign	oBlue	 = mCCD_B[9:2];
 
 
 //--------

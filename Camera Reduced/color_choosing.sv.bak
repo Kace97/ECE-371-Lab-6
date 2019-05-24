@@ -34,7 +34,7 @@ module color_choosing (clk, reset, button_right, color);
   if(ps== white)
    color = 24'hffffff;
   else if (ps == black)
-   color = 24'h000001;
+   color = 24'h000000;
   else if (ps == red)
    color = 24'hff0000;
   else if (ps == blue)

@@ -266,7 +266,7 @@ sdram_pll u6(
 //------SDRAM CONTROLLER --
 Sdram_Control	   u7	(	//	HOST Side						
 						   .RESET_N     ( KEY[2] ),
-							.CLK         ( SDRAM_CTRL_CLK ) , 
+							.CLK         ( SDRAM_CTRL_CLK ) ,
 							//	FIFO Write Side 1
 							.WR1_DATA    ( LUT_MIPI_PIXEL_D[9:0] ),
 							.WR1         ( LUT_MIPI_PIXEL_HS & LUT_MIPI_PIXEL_VS) ,
@@ -309,6 +309,7 @@ RAW2RGB_J				u4	(
                      .READ_Request ( READ_Request ),
                      .VGA_VS       ( pre_VGA_VS ),	
 							.VGA_HS       ( pre_VGA_HS ), 
+							.mouse_overwrite(mouse_overwrite),
 	                  			
 							.oRed         ( RED  ),
 							.oGreen       ( GREEN),
@@ -397,8 +398,8 @@ CLOCKMEM  ck3 ( .CLK(MIPI_PIXEL_CLK_)   ,.CLK_FREQ  (25000000  ) , . CK_1HZ (D8M
 wire button_left, button_right, button_middle;
 wire [9:0] bin_x, bin_y;
 //add the mouse to be displayed on the monitor
-ps2 mouse(.start(1'b1),         // transmit instrucions to device
-		.reset(KEY[2]),         // FSM reset signal
+ps2 mouse(.start(~KEY[2]),         // transmit instrucions to device
+		.reset(~KEY[2]),         // FSM reset signal
 		.CLOCK_50(CLOCK_50),      //clock source
 		//.PS2_CLK(PS2_CLK),       //ps2_clock signal inout
 		//.PS2_DAT(PS2_DAT),       //ps2_data  signal inout
@@ -407,6 +408,9 @@ ps2 mouse(.start(1'b1),         // transmit instrucions to device
 		.button_middle(button_middle), //middle button press display
 		.bin_x(bin_x),         //binned X position with hysteresis
 		.bin_y(bin_y)        );
+		
+wire mouse_overwrite;
+assign mouse_overwrite = ((VGA_H_CNT >= 320-2) & (VGA_H_CNT <= 320+2)) & ((VGA_V_CNT >= 240) & (VGA_V_CNT <= 240));
 
 wire freeze, flop;
 inputff freeze_frame (.clk(CLOCK_50), .reset(~KEY[2]), .in(SW[8]), .out(freeze), .flop(flop));
