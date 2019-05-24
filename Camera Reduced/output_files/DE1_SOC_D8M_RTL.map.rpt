@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE1_SOC_D8M_RTL
-Fri May 24 12:48:55 2019
+Fri May 24 13:22:19 2019
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -147,7 +147,7 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri May 24 12:48:54 2019       ;
+; Analysis & Synthesis Status     ; Successful - Fri May 24 13:22:18 2019       ;
 ; Quartus Prime Version           ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; DE1_SOC_D8M_RTL                             ;
 ; Top-level Entity Name           ; DE1_SOC_D8M_RTL                             ;
@@ -371,14 +371,14 @@ agreement for further details.
 +---------------------------------------------+-----------------------------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                                               ;
 +---------------------------------------------+-----------------------------------------------------------------------------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 1887                                                                                                ;
+; Estimate of Logic utilization (ALMs needed) ; 1896                                                                                                ;
 ;                                             ;                                                                                                     ;
 ; Combinational ALUT usage for logic          ; 2931                                                                                                ;
 ;     -- 7 input functions                    ; 31                                                                                                  ;
-;     -- 6 input functions                    ; 697                                                                                                 ;
-;     -- 5 input functions                    ; 461                                                                                                 ;
-;     -- 4 input functions                    ; 381                                                                                                 ;
-;     -- <=3 input functions                  ; 1361                                                                                                ;
+;     -- 6 input functions                    ; 714                                                                                                 ;
+;     -- 5 input functions                    ; 445                                                                                                 ;
+;     -- 4 input functions                    ; 403                                                                                                 ;
+;     -- <=3 input functions                  ; 1338                                                                                                ;
 ;                                             ;                                                                                                     ;
 ; Dedicated logic registers                   ; 2027                                                                                                ;
 ;                                             ;                                                                                                     ;
@@ -393,7 +393,7 @@ agreement for further details.
 ;                                             ;                                                                                                     ;
 ; Maximum fan-out node                        ; VIDEO_PLL:pll_ref1|altpll:altpll_component|VIDEO_PLL_altpll:auto_generated|wire_generic_pll1_outclk ;
 ; Maximum fan-out                             ; 669                                                                                                 ;
-; Total fan-out                               ; 19578                                                                                               ;
+; Total fan-out                               ; 19620                                                                                               ;
 ; Average fan-out                             ; 3.54                                                                                                ;
 +---------------------------------------------+-----------------------------------------------------------------------------------------------------+
 
@@ -403,7 +403,7 @@ agreement for further details.
 +--------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------+--------------+
 ; Compilation Hierarchy Node                       ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                               ; Entity Name               ; Library Name ;
 +--------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------+--------------+
-; |DE1_SOC_D8M_RTL                                 ; 2931 (13)           ; 2027 (0)                  ; 88064             ; 2          ; 226  ; 0            ; |DE1_SOC_D8M_RTL                                                                                                                                                  ; DE1_SOC_D8M_RTL           ; work         ;
+; |DE1_SOC_D8M_RTL                                 ; 2931 (16)           ; 2027 (0)                  ; 88064             ; 2          ; 226  ; 0            ; |DE1_SOC_D8M_RTL                                                                                                                                                  ; DE1_SOC_D8M_RTL           ; work         ;
 ;    |AUTO_FOCUS_ON:vd|                            ; 40 (40)             ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_RTL|AUTO_FOCUS_ON:vd                                                                                                                                 ; AUTO_FOCUS_ON             ; work         ;
 ;    |CLOCK_DELAY:del1|                            ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_RTL|CLOCK_DELAY:del1                                                                                                                                 ; CLOCK_DELAY               ; work         ;
 ;    |FOCUS_ADJ:adl|                               ; 869 (17)            ; 585 (24)                  ; 0                 ; 2          ; 0    ; 0            ; |DE1_SOC_D8M_RTL|FOCUS_ADJ:adl                                                                                                                                    ; FOCUS_ADJ                 ; work         ;
@@ -484,7 +484,7 @@ agreement for further details.
 ;                |mux_5r7:wrfull_eq_comp_msb_mux|  ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_RTL|Sdram_Control:u7|Sdram_WR_FIFO:u_write1_fifo|dcfifo:dcfifo_component|dcfifo_kkp1:auto_generated|mux_5r7:wrfull_eq_comp_msb_mux                   ; mux_5r7                   ; work         ;
 ;       |command:u_command|                        ; 53 (53)             ; 49 (49)                   ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_RTL|Sdram_Control:u7|command:u_command                                                                                                               ; command                   ; work         ;
 ;       |control_interface:u_control_interface|    ; 73 (73)             ; 55 (55)                   ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_RTL|Sdram_Control:u7|control_interface:u_control_interface                                                                                           ; control_interface         ; work         ;
-;    |VGA_Controller:u1|                           ; 69 (69)             ; 26 (26)                   ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_RTL|VGA_Controller:u1                                                                                                                                ; VGA_Controller            ; work         ;
+;    |VGA_Controller:u1|                           ; 66 (66)             ; 26 (26)                   ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_RTL|VGA_Controller:u1                                                                                                                                ; VGA_Controller            ; work         ;
 ;    |VIDEO_PLL:pll_ref1|                          ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_RTL|VIDEO_PLL:pll_ref1                                                                                                                               ; VIDEO_PLL                 ; work         ;
 ;       |altpll:altpll_component|                  ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_RTL|VIDEO_PLL:pll_ref1|altpll:altpll_component                                                                                                       ; altpll                    ; work         ;
 ;          |VIDEO_PLL_altpll:auto_generated|       ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_RTL|VIDEO_PLL:pll_ref1|altpll:altpll_component|VIDEO_PLL_altpll:auto_generated                                                                       ; VIDEO_PLL_altpll          ; work         ;
@@ -4054,11 +4054,11 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     normal            ; 2075                        ;
 ;         0 data inputs ; 5                           ;
 ;         1 data inputs ; 21                          ;
-;         2 data inputs ; 276                         ;
-;         3 data inputs ; 244                         ;
-;         4 data inputs ; 381                         ;
-;         5 data inputs ; 451                         ;
-;         6 data inputs ; 697                         ;
+;         2 data inputs ; 275                         ;
+;         3 data inputs ; 222                         ;
+;         4 data inputs ; 403                         ;
+;         5 data inputs ; 435                         ;
+;         6 data inputs ; 714                         ;
 ;     shared            ; 76                          ;
 ;         2 data inputs ; 76                          ;
 ; arriav_mac            ; 2                           ;
@@ -4076,7 +4076,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:38     ;
+; Top            ; 00:00:39     ;
 +----------------+--------------+
 
 
@@ -4086,7 +4086,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Fri May 24 12:47:53 2019
+    Info: Processing started: Fri May 24 13:21:17 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE1_SOC_D8M_RTL -c DE1_SOC_D8M_RTL
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -4920,10 +4920,10 @@ Info (21057): Implemented 4081 device resources after synthesis - the final reso
     Info (21065): Implemented 4 PLLs
     Info (21062): Implemented 2 DSP elements
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 302 warnings
-    Info: Peak virtual memory: 4969 megabytes
-    Info: Processing ended: Fri May 24 12:48:55 2019
+    Info: Peak virtual memory: 4965 megabytes
+    Info: Processing ended: Fri May 24 13:22:19 2019
     Info: Elapsed time: 00:01:02
-    Info: Total CPU time (on all processors): 00:01:30
+    Info: Total CPU time (on all processors): 00:01:26
 
 
 +------------------------------------------+

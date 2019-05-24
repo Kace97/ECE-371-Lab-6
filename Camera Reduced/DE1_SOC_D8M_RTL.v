@@ -410,7 +410,7 @@ ps2 mouse(.start(~KEY[2]),         // transmit instrucions to device
 		.bin_y(bin_y)        );
 		
 wire mouse_overwrite;
-assign mouse_overwrite = ((VGA_H_CNT >= 320-2) & (VGA_H_CNT <= 320+2)) & ((VGA_V_CNT >= 240) & (VGA_V_CNT <= 240));
+assign mouse_overwrite = ((VGA_H_CNT >= 320-2) & (VGA_H_CNT <= 320+2)) & (VGA_V_CNT == 240) | (VGA_H_CNT == 320) & (VGA_V_CNT >= 240-2) & (VGA_V_CNT <= 240+2);
 
 wire freeze, flop;
 inputff freeze_frame (.clk(CLOCK_50), .reset(~KEY[2]), .in(SW[8]), .out(freeze), .flop(flop));
