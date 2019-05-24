@@ -124,7 +124,7 @@ SW[4] => SW[4].IN1
 SW[5] => SW[5].IN1
 SW[6] => SW[6].IN1
 SW[7] => SW[7].IN1
-SW[8] => SW[8].IN1
+SW[8] => SW[8].IN2
 SW[9] => SW[9].IN2
 TD_CLK27 => ~NO_FANOUT~
 TD_DATA[0] => ~NO_FANOUT~
@@ -10709,11 +10709,14 @@ bin_y[4] <= bin_y[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |DE1_SOC_D8M_RTL|inputff:freeze_frame
+clk => hold.CLK
 clk => out[0]~reg0.CLK
 clk => DFF[0].CLK
 reset => DFF.OUTPUTSELECT
 reset => out.OUTPUTSELECT
+reset => hold.ENA
 in[0] => DFF.DATAA
 out[0] <= out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+flop <= flop.DB_MAX_OUTPUT_PORT_TYPE
 
 

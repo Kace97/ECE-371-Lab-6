@@ -243,7 +243,7 @@ MIPI_BRIDGE_CAMERA_Config    cfin(
 //------MIPI / VGA REF CLOCK  --
 pll_test pll_ref(
 	                   .inclk0 ( CLOCK3_50 ),
-	                   .areset ( ~KEY[2]   ),
+	                   .areset ( ~KEY[2]  ),
 	                   .c0( MIPI_REFCLK    ) //20Mhz
 
     );
@@ -269,7 +269,7 @@ Sdram_Control	   u7	(	//	HOST Side
 							.CLK         ( SDRAM_CTRL_CLK ) , 
 							//	FIFO Write Side 1
 							.WR1_DATA    ( LUT_MIPI_PIXEL_D[9:0] ),
-							.WR1         ( LUT_MIPI_PIXEL_HS & LUT_MIPI_PIXEL_VS & freeze) ,
+							.WR1         ( LUT_MIPI_PIXEL_HS & LUT_MIPI_PIXEL_VS) ,
 							
 							.WR1_ADDR    ( 0 ),
                      .WR1_MAX_ADDR( 640*480 ),
@@ -408,8 +408,8 @@ ps2 mouse(.start(1'b1),         // transmit instrucions to device
 		.bin_x(bin_x),         //binned X position with hysteresis
 		.bin_y(bin_y)        );
 
-wire freeze;
-inputff freeze_frame (.clk(CLOCK_50), .reset(~KEY[2]), .in(~SW[8]), .out(freeze));
+wire freeze, flop;
+inputff freeze_frame (.clk(CLOCK_50), .reset(~KEY[2]), .in(SW[8]), .out(freeze), .flop(flop));
 
 endmodule
 

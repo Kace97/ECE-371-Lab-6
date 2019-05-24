@@ -272,10 +272,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "CLOCK_50",
-					"strict" : false
-				},
-				{
 					"name" : "CLOCK2_50",
 					"strict" : false
 				},
@@ -345,10 +341,6 @@
 				},
 				{
 					"name" : "SW[9]",
-					"strict" : false
-				},
-				{
-					"name" : "SW[8]",
 					"strict" : false
 				},
 				{

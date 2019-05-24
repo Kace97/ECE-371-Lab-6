@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for DE1_SOC_D8M_RTL
-Thu May 23 15:53:35 2019
+Fri May 24 11:37:22 2019
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -100,17 +100,15 @@ agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
 ;                            ;             ;
-; Average used               ; 1.71        ;
-; Maximum used               ; 4           ;
+; Average used               ; 1.34        ;
+; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  23.6%      ;
-;     Processor 3            ;  23.5%      ;
-;     Processor 4            ;  23.5%      ;
+;     Processor 2            ;  33.9%      ;
 +----------------------------+-------------+
 
 
@@ -119,7 +117,7 @@ agreement for further details.
 +---------------------+--------+--------------------------+
 ; SDC File Path       ; Status ; Read at                  ;
 +---------------------+--------+--------------------------+
-; DE1_SOC_D8M_RTL.sdc ; OK     ; Thu May 23 15:53:17 2019 ;
+; DE1_SOC_D8M_RTL.sdc ; OK     ; Fri May 24 11:37:03 2019 ;
 +---------------------+--------+--------------------------+
 
 
@@ -143,17 +141,16 @@ agreement for further details.
 +---------------------------------------------------------------------------------+-----------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+-------------------------------------------------------------------------------+------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Slow 1100mV 85C Model Fmax Summary                                                                                                                                    ;
-+------------+-----------------+---------------------------------------------------------------------------------+------------------------------------------------------+
-; Fmax       ; Restricted Fmax ; Clock Name                                                                      ; Note                                                 ;
-+------------+-----------------+---------------------------------------------------------------------------------+------------------------------------------------------+
-; 67.51 MHz  ; 67.51 MHz       ; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ;                                                      ;
-; 168.61 MHz ; 168.61 MHz      ; CLOCK2_50                                                                       ;                                                      ;
-; 194.82 MHz ; 194.82 MHz      ; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ;                                                      ;
-; 199.52 MHz ; 199.52 MHz      ; MIPI_PIXEL_CLK                                                                  ;                                                      ;
-; 930.23 MHz ; 688.71 MHz      ; CLOCK_50                                                                        ; limit due to low minimum pulse width violation (tcl) ;
-+------------+-----------------+---------------------------------------------------------------------------------+------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------+
+; Slow 1100mV 85C Model Fmax Summary                                                                                    ;
++------------+-----------------+---------------------------------------------------------------------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name                                                                      ; Note ;
++------------+-----------------+---------------------------------------------------------------------------------+------+
+; 69.93 MHz  ; 69.93 MHz       ; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ;      ;
+; 95.27 MHz  ; 95.27 MHz       ; MIPI_PIXEL_CLK                                                                  ;      ;
+; 150.83 MHz ; 150.83 MHz      ; CLOCK2_50                                                                       ;      ;
+; 187.76 MHz ; 187.76 MHz      ; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ;      ;
++------------+-----------------+---------------------------------------------------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
@@ -168,11 +165,10 @@ HTML report is unavailable in plain text report export.
 +---------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                           ; Slack  ; End Point TNS ;
 +---------------------------------------------------------------------------------+--------+---------------+
-; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; 3.990  ; 0.000         ;
-; MIPI_PIXEL_CLK                                                                  ; 12.458 ; 0.000         ;
-; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 12.747 ; 0.000         ;
-; CLOCK2_50                                                                       ; 14.069 ; 0.000         ;
-; CLOCK_50                                                                        ; 18.925 ; 0.000         ;
+; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; 4.360  ; 0.000         ;
+; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 12.830 ; 0.000         ;
+; CLOCK2_50                                                                       ; 13.370 ; 0.000         ;
+; MIPI_PIXEL_CLK                                                                  ; 23.393 ; 0.000         ;
 +---------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -181,11 +177,10 @@ HTML report is unavailable in plain text report export.
 +---------------------------------------------------------------------------------+-------+---------------+
 ; Clock                                                                           ; Slack ; End Point TNS ;
 +---------------------------------------------------------------------------------+-------+---------------+
-; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 0.285 ; 0.000         ;
-; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; 0.309 ; 0.000         ;
-; CLOCK2_50                                                                       ; 0.367 ; 0.000         ;
-; CLOCK_50                                                                        ; 0.438 ; 0.000         ;
-; MIPI_PIXEL_CLK                                                                  ; 0.478 ; 0.000         ;
+; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; 0.265 ; 0.000         ;
+; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 0.301 ; 0.000         ;
+; CLOCK2_50                                                                       ; 0.461 ; 0.000         ;
+; MIPI_PIXEL_CLK                                                                  ; 0.612 ; 0.000         ;
 +---------------------------------------------------------------------------------+-------+---------------+
 
 
@@ -194,9 +189,9 @@ HTML report is unavailable in plain text report export.
 +---------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                           ; Slack  ; End Point TNS ;
 +---------------------------------------------------------------------------------+--------+---------------+
-; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; -0.025 ; -0.132        ;
-; MIPI_PIXEL_CLK                                                                  ; 13.342 ; 0.000         ;
-; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 13.864 ; 0.000         ;
+; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; -0.462 ; -6.255        ;
+; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 12.461 ; 0.000         ;
+; MIPI_PIXEL_CLK                                                                  ; 13.517 ; 0.000         ;
 +---------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -205,9 +200,9 @@ HTML report is unavailable in plain text report export.
 +---------------------------------------------------------------------------------+-------+---------------+
 ; Clock                                                                           ; Slack ; End Point TNS ;
 +---------------------------------------------------------------------------------+-------+---------------+
-; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; 0.339 ; 0.000         ;
-; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 0.510 ; 0.000         ;
-; MIPI_PIXEL_CLK                                                                  ; 0.917 ; 0.000         ;
+; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; 0.298 ; 0.000         ;
+; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 0.460 ; 0.000         ;
+; MIPI_PIXEL_CLK                                                                  ; 0.959 ; 0.000         ;
 +---------------------------------------------------------------------------------+-------+---------------+
 
 
@@ -219,12 +214,12 @@ HTML report is unavailable in plain text report export.
 ; pll_ref1|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]   ; 1.666  ; 0.000         ;
 ; pll_ref|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]    ; 1.666  ; 0.000         ;
 ; u6|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]         ; 1.666  ; 0.000         ;
-; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; 3.783  ; 0.000         ;
-; CLOCK2_50                                                                       ; 8.744  ; 0.000         ;
-; CLOCK_50                                                                        ; 9.274  ; 0.000         ;
+; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; 3.790  ; 0.000         ;
+; CLOCK2_50                                                                       ; 8.595  ; 0.000         ;
 ; CLOCK3_50                                                                       ; 9.670  ; 0.000         ;
-; MIPI_PIXEL_CLK                                                                  ; 18.455 ; 0.000         ;
-; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 18.777 ; 0.000         ;
+; CLOCK_50                                                                        ; 9.670  ; 0.000         ;
+; MIPI_PIXEL_CLK                                                                  ; 18.384 ; 0.000         ;
+; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 18.785 ; 0.000         ;
 +---------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -234,10 +229,10 @@ HTML report is unavailable in plain text report export.
 Worst-Case MTBF of Design is 1e+09 years or 3.15e+16 seconds.
 Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
 
-Number of Synchronizer Chains Found: 126
-Shortest Synchronizer Chain: 1 Registers
-Fraction of Chains for which MTBFs Could Not be Calculated: 0.635
-Worst Case Available Settling Time: 7.751 ns
+Number of Synchronizer Chains Found: 124
+Shortest Synchronizer Chain: 2 Registers
+Fraction of Chains for which MTBFs Could Not be Calculated: 0.645
+Worst Case Available Settling Time: 7.852 ns
 
 Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
   - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 79.4
@@ -246,17 +241,16 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Slow 1100mV 0C Model Fmax Summary                                                                                                                               ;
-+------------+-----------------+---------------------------------------------------------------------------------+------------------------------------------------+
-; Fmax       ; Restricted Fmax ; Clock Name                                                                      ; Note                                           ;
-+------------+-----------------+---------------------------------------------------------------------------------+------------------------------------------------+
-; 67.44 MHz  ; 67.44 MHz       ; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ;                                                ;
-; 169.12 MHz ; 169.12 MHz      ; CLOCK2_50                                                                       ;                                                ;
-; 199.8 MHz  ; 199.8 MHz       ; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ;                                                ;
-; 205.42 MHz ; 205.42 MHz      ; MIPI_PIXEL_CLK                                                                  ;                                                ;
-; 963.39 MHz ; 717.36 MHz      ; CLOCK_50                                                                        ; limit due to minimum period restriction (tmin) ;
-+------------+-----------------+---------------------------------------------------------------------------------+------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------+
+; Slow 1100mV 0C Model Fmax Summary                                                                                     ;
++------------+-----------------+---------------------------------------------------------------------------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name                                                                      ; Note ;
++------------+-----------------+---------------------------------------------------------------------------------+------+
+; 69.62 MHz  ; 69.62 MHz       ; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ;      ;
+; 97.29 MHz  ; 97.29 MHz       ; MIPI_PIXEL_CLK                                                                  ;      ;
+; 150.88 MHz ; 150.88 MHz      ; CLOCK2_50                                                                       ;      ;
+; 191.83 MHz ; 191.83 MHz      ; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ;      ;
++------------+-----------------+---------------------------------------------------------------------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
@@ -265,11 +259,10 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                           ; Slack  ; End Point TNS ;
 +---------------------------------------------------------------------------------+--------+---------------+
-; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; 4.054  ; 0.000         ;
-; MIPI_PIXEL_CLK                                                                  ; 12.375 ; 0.000         ;
-; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 12.853 ; 0.000         ;
-; CLOCK2_50                                                                       ; 14.087 ; 0.000         ;
-; CLOCK_50                                                                        ; 18.962 ; 0.000         ;
+; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; 4.437  ; 0.000         ;
+; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 12.999 ; 0.000         ;
+; CLOCK2_50                                                                       ; 13.372 ; 0.000         ;
+; MIPI_PIXEL_CLK                                                                  ; 22.835 ; 0.000         ;
 +---------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -278,11 +271,10 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------------------------------------------------------------------+-------+---------------+
 ; Clock                                                                           ; Slack ; End Point TNS ;
 +---------------------------------------------------------------------------------+-------+---------------+
-; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 0.269 ; 0.000         ;
-; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; 0.292 ; 0.000         ;
-; CLOCK2_50                                                                       ; 0.368 ; 0.000         ;
-; CLOCK_50                                                                        ; 0.412 ; 0.000         ;
-; MIPI_PIXEL_CLK                                                                  ; 0.454 ; 0.000         ;
+; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; 0.244 ; 0.000         ;
+; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 0.281 ; 0.000         ;
+; CLOCK2_50                                                                       ; 0.458 ; 0.000         ;
+; MIPI_PIXEL_CLK                                                                  ; 0.588 ; 0.000         ;
 +---------------------------------------------------------------------------------+-------+---------------+
 
 
@@ -291,9 +283,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                           ; Slack  ; End Point TNS ;
 +---------------------------------------------------------------------------------+--------+---------------+
-; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; 0.320  ; 0.000         ;
-; MIPI_PIXEL_CLK                                                                  ; 13.388 ; 0.000         ;
-; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 13.998 ; 0.000         ;
+; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; -0.105 ; -0.514        ;
+; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 12.703 ; 0.000         ;
+; MIPI_PIXEL_CLK                                                                  ; 13.594 ; 0.000         ;
 +---------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -302,9 +294,9 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------------------------------------------------------------------+-------+---------------+
 ; Clock                                                                           ; Slack ; End Point TNS ;
 +---------------------------------------------------------------------------------+-------+---------------+
-; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; 0.354 ; 0.000         ;
-; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 0.523 ; 0.000         ;
-; MIPI_PIXEL_CLK                                                                  ; 1.000 ; 0.000         ;
+; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; 0.314 ; 0.000         ;
+; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 0.462 ; 0.000         ;
+; MIPI_PIXEL_CLK                                                                  ; 0.964 ; 0.000         ;
 +---------------------------------------------------------------------------------+-------+---------------+
 
 
@@ -316,12 +308,12 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; pll_ref1|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]   ; 1.666  ; 0.000         ;
 ; pll_ref|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]    ; 1.666  ; 0.000         ;
 ; u6|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]         ; 1.666  ; 0.000         ;
-; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; 3.756  ; 0.000         ;
-; CLOCK2_50                                                                       ; 8.716  ; 0.000         ;
-; CLOCK_50                                                                        ; 9.331  ; 0.000         ;
+; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; 3.764  ; 0.000         ;
+; CLOCK2_50                                                                       ; 8.588  ; 0.000         ;
 ; CLOCK3_50                                                                       ; 9.673  ; 0.000         ;
-; MIPI_PIXEL_CLK                                                                  ; 18.489 ; 0.000         ;
-; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 18.757 ; 0.000         ;
+; CLOCK_50                                                                        ; 9.673  ; 0.000         ;
+; MIPI_PIXEL_CLK                                                                  ; 18.419 ; 0.000         ;
+; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 18.756 ; 0.000         ;
 +---------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -331,10 +323,10 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 Worst-Case MTBF of Design is 1e+09 years or 3.15e+16 seconds.
 Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
 
-Number of Synchronizer Chains Found: 126
-Shortest Synchronizer Chain: 1 Registers
-Fraction of Chains for which MTBFs Could Not be Calculated: 0.635
-Worst Case Available Settling Time: 7.812 ns
+Number of Synchronizer Chains Found: 124
+Shortest Synchronizer Chain: 2 Registers
+Fraction of Chains for which MTBFs Could Not be Calculated: 0.645
+Worst Case Available Settling Time: 7.871 ns
 
 Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
   - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 5.2
@@ -348,11 +340,10 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +---------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                           ; Slack  ; End Point TNS ;
 +---------------------------------------------------------------------------------+--------+---------------+
-; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; 6.469  ; 0.000         ;
-; MIPI_PIXEL_CLK                                                                  ; 14.625 ; 0.000         ;
-; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 15.615 ; 0.000         ;
-; CLOCK2_50                                                                       ; 16.379 ; 0.000         ;
-; CLOCK_50                                                                        ; 19.340 ; 0.000         ;
+; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; 6.652  ; 0.000         ;
+; CLOCK2_50                                                                       ; 15.589 ; 0.000         ;
+; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 15.621 ; 0.000         ;
+; MIPI_PIXEL_CLK                                                                  ; 25.380 ; 0.000         ;
 +---------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -361,11 +352,10 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +---------------------------------------------------------------------------------+-------+---------------+
 ; Clock                                                                           ; Slack ; End Point TNS ;
 +---------------------------------------------------------------------------------+-------+---------------+
-; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 0.163 ; 0.000         ;
-; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; 0.174 ; 0.000         ;
-; CLOCK2_50                                                                       ; 0.200 ; 0.000         ;
-; CLOCK_50                                                                        ; 0.239 ; 0.000         ;
-; MIPI_PIXEL_CLK                                                                  ; 0.257 ; 0.000         ;
+; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; 0.170 ; 0.000         ;
+; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 0.171 ; 0.000         ;
+; CLOCK2_50                                                                       ; 0.225 ; 0.000         ;
+; MIPI_PIXEL_CLK                                                                  ; 0.279 ; 0.000         ;
 +---------------------------------------------------------------------------------+-------+---------------+
 
 
@@ -374,9 +364,9 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +---------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                           ; Slack  ; End Point TNS ;
 +---------------------------------------------------------------------------------+--------+---------------+
-; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; 3.149  ; 0.000         ;
-; MIPI_PIXEL_CLK                                                                  ; 14.869 ; 0.000         ;
-; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 16.010 ; 0.000         ;
+; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; 2.946  ; 0.000         ;
+; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 14.834 ; 0.000         ;
+; MIPI_PIXEL_CLK                                                                  ; 15.059 ; 0.000         ;
 +---------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -385,9 +375,9 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +---------------------------------------------------------------------------------+-------+---------------+
 ; Clock                                                                           ; Slack ; End Point TNS ;
 +---------------------------------------------------------------------------------+-------+---------------+
-; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; 0.288 ; 0.000         ;
-; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 0.376 ; 0.000         ;
-; MIPI_PIXEL_CLK                                                                  ; 0.762 ; 0.000         ;
+; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; 0.205 ; 0.000         ;
+; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 0.314 ; 0.000         ;
+; MIPI_PIXEL_CLK                                                                  ; 0.701 ; 0.000         ;
 +---------------------------------------------------------------------------------+-------+---------------+
 
 
@@ -399,12 +389,12 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 ; pll_ref1|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]   ; 1.666  ; 0.000         ;
 ; pll_ref|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]    ; 1.666  ; 0.000         ;
 ; u6|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]         ; 1.666  ; 0.000         ;
-; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; 3.888  ; 0.000         ;
-; CLOCK2_50                                                                       ; 8.693  ; 0.000         ;
-; CLOCK_50                                                                        ; 9.141  ; 0.000         ;
+; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; 3.892  ; 0.000         ;
+; CLOCK2_50                                                                       ; 8.569  ; 0.000         ;
 ; CLOCK3_50                                                                       ; 9.336  ; 0.000         ;
-; MIPI_PIXEL_CLK                                                                  ; 17.923 ; 0.000         ;
-; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 18.890 ; 0.000         ;
+; CLOCK_50                                                                        ; 9.336  ; 0.000         ;
+; MIPI_PIXEL_CLK                                                                  ; 17.857 ; 0.000         ;
+; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 18.892 ; 0.000         ;
 +---------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -414,10 +404,10 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 Worst-Case MTBF of Design is 1e+09 years or 3.15e+16 seconds.
 Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
 
-Number of Synchronizer Chains Found: 126
-Shortest Synchronizer Chain: 1 Registers
-Fraction of Chains for which MTBFs Could Not be Calculated: 0.635
-Worst Case Available Settling Time: 8.507 ns
+Number of Synchronizer Chains Found: 124
+Shortest Synchronizer Chain: 2 Registers
+Fraction of Chains for which MTBFs Could Not be Calculated: 0.645
+Worst Case Available Settling Time: 8.663 ns
 
 Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
   - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 79.4
@@ -431,11 +421,10 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +---------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                           ; Slack  ; End Point TNS ;
 +---------------------------------------------------------------------------------+--------+---------------+
-; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; 6.709  ; 0.000         ;
-; MIPI_PIXEL_CLK                                                                  ; 15.048 ; 0.000         ;
-; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 15.955 ; 0.000         ;
-; CLOCK2_50                                                                       ; 16.644 ; 0.000         ;
-; CLOCK_50                                                                        ; 19.384 ; 0.000         ;
+; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; 6.864  ; 0.000         ;
+; CLOCK2_50                                                                       ; 15.936 ; 0.000         ;
+; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 15.993 ; 0.000         ;
+; MIPI_PIXEL_CLK                                                                  ; 26.497 ; 0.000         ;
 +---------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -444,11 +433,10 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +---------------------------------------------------------------------------------+-------+---------------+
 ; Clock                                                                           ; Slack ; End Point TNS ;
 +---------------------------------------------------------------------------------+-------+---------------+
-; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 0.150 ; 0.000         ;
-; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; 0.160 ; 0.000         ;
-; CLOCK2_50                                                                       ; 0.188 ; 0.000         ;
-; CLOCK_50                                                                        ; 0.213 ; 0.000         ;
-; MIPI_PIXEL_CLK                                                                  ; 0.225 ; 0.000         ;
+; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; 0.140 ; 0.000         ;
+; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 0.156 ; 0.000         ;
+; CLOCK2_50                                                                       ; 0.221 ; 0.000         ;
+; MIPI_PIXEL_CLK                                                                  ; 0.250 ; 0.000         ;
 +---------------------------------------------------------------------------------+-------+---------------+
 
 
@@ -457,9 +445,9 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +---------------------------------------------------------------------------------+--------+---------------+
 ; Clock                                                                           ; Slack  ; End Point TNS ;
 +---------------------------------------------------------------------------------+--------+---------------+
-; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; 3.907  ; 0.000         ;
-; MIPI_PIXEL_CLK                                                                  ; 15.440 ; 0.000         ;
-; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 16.370 ; 0.000         ;
+; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; 3.702  ; 0.000         ;
+; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 15.374 ; 0.000         ;
+; MIPI_PIXEL_CLK                                                                  ; 15.587 ; 0.000         ;
 +---------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -468,9 +456,9 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +---------------------------------------------------------------------------------+-------+---------------+
 ; Clock                                                                           ; Slack ; End Point TNS ;
 +---------------------------------------------------------------------------------+-------+---------------+
-; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; 0.198 ; 0.000         ;
-; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 0.317 ; 0.000         ;
-; MIPI_PIXEL_CLK                                                                  ; 0.672 ; 0.000         ;
+; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; 0.126 ; 0.000         ;
+; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 0.235 ; 0.000         ;
+; MIPI_PIXEL_CLK                                                                  ; 0.602 ; 0.000         ;
 +---------------------------------------------------------------------------------+-------+---------------+
 
 
@@ -482,12 +470,12 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 ; pll_ref1|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]   ; 1.666  ; 0.000         ;
 ; pll_ref|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]    ; 1.666  ; 0.000         ;
 ; u6|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]         ; 1.666  ; 0.000         ;
-; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; 3.890  ; 0.000         ;
-; CLOCK2_50                                                                       ; 8.667  ; 0.000         ;
-; CLOCK_50                                                                        ; 9.102  ; 0.000         ;
+; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; 3.892  ; 0.000         ;
+; CLOCK2_50                                                                       ; 8.565  ; 0.000         ;
 ; CLOCK3_50                                                                       ; 9.286  ; 0.000         ;
-; MIPI_PIXEL_CLK                                                                  ; 17.925 ; 0.000         ;
-; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 18.889 ; 0.000         ;
+; CLOCK_50                                                                        ; 9.286  ; 0.000         ;
+; MIPI_PIXEL_CLK                                                                  ; 17.873 ; 0.000         ;
+; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 18.890 ; 0.000         ;
 +---------------------------------------------------------------------------------+--------+---------------+
 
 
@@ -497,10 +485,10 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 Worst-Case MTBF of Design is 1e+09 years or 3.15e+16 seconds.
 Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
 
-Number of Synchronizer Chains Found: 126
-Shortest Synchronizer Chain: 1 Registers
-Fraction of Chains for which MTBFs Could Not be Calculated: 0.635
-Worst Case Available Settling Time: 8.652 ns
+Number of Synchronizer Chains Found: 124
+Shortest Synchronizer Chain: 2 Registers
+Fraction of Chains for which MTBFs Could Not be Calculated: 0.645
+Worst Case Available Settling Time: 8.771 ns
 
 Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
   - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 5.2
@@ -514,26 +502,26 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +----------------------------------------------------------------------------------+--------+-------+----------+---------+---------------------+
 ; Clock                                                                            ; Setup  ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
 +----------------------------------------------------------------------------------+--------+-------+----------+---------+---------------------+
-; Worst-case Slack                                                                 ; 3.990  ; 0.150 ; -0.025   ; 0.198   ; 1.666               ;
-;  CLOCK2_50                                                                       ; 14.069 ; 0.188 ; N/A      ; N/A     ; 8.667               ;
+; Worst-case Slack                                                                 ; 4.360  ; 0.140 ; -0.462   ; 0.126   ; 1.666               ;
+;  CLOCK2_50                                                                       ; 13.370 ; 0.221 ; N/A      ; N/A     ; 8.565               ;
 ;  CLOCK3_50                                                                       ; N/A    ; N/A   ; N/A      ; N/A     ; 9.286               ;
-;  CLOCK_50                                                                        ; 18.925 ; 0.213 ; N/A      ; N/A     ; 9.102               ;
-;  MIPI_PIXEL_CLK                                                                  ; 12.375 ; 0.225 ; 13.342   ; 0.672   ; 17.923              ;
+;  CLOCK_50                                                                        ; N/A    ; N/A   ; N/A      ; N/A     ; 9.286               ;
+;  MIPI_PIXEL_CLK                                                                  ; 22.835 ; 0.250 ; 13.517   ; 0.602   ; 17.857              ;
 ;  pll_ref1|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]   ; N/A    ; N/A   ; N/A      ; N/A     ; 1.666               ;
-;  pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 12.747 ; 0.150 ; 13.864   ; 0.317   ; 18.757              ;
+;  pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 12.830 ; 0.156 ; 12.461   ; 0.235   ; 18.756              ;
 ;  pll_ref|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]    ; N/A    ; N/A   ; N/A      ; N/A     ; 1.666               ;
 ;  u6|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]         ; N/A    ; N/A   ; N/A      ; N/A     ; 1.666               ;
-;  u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; 3.990  ; 0.160 ; -0.025   ; 0.198   ; 3.756               ;
-; Design-wide TNS                                                                  ; 0.0    ; 0.0   ; -0.132   ; 0.0     ; 0.0                 ;
+;  u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; 4.360  ; 0.140 ; -0.462   ; 0.126   ; 3.764               ;
+; Design-wide TNS                                                                  ; 0.0    ; 0.0   ; -6.255   ; 0.0     ; 0.0                 ;
 ;  CLOCK2_50                                                                       ; 0.000  ; 0.000 ; N/A      ; N/A     ; 0.000               ;
 ;  CLOCK3_50                                                                       ; N/A    ; N/A   ; N/A      ; N/A     ; 0.000               ;
-;  CLOCK_50                                                                        ; 0.000  ; 0.000 ; N/A      ; N/A     ; 0.000               ;
+;  CLOCK_50                                                                        ; N/A    ; N/A   ; N/A      ; N/A     ; 0.000               ;
 ;  MIPI_PIXEL_CLK                                                                  ; 0.000  ; 0.000 ; 0.000    ; 0.000   ; 0.000               ;
 ;  pll_ref1|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]   ; N/A    ; N/A   ; N/A      ; N/A     ; 0.000               ;
 ;  pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 0.000  ; 0.000 ; 0.000    ; 0.000   ; 0.000               ;
 ;  pll_ref|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]    ; N/A    ; N/A   ; N/A      ; N/A     ; 0.000               ;
 ;  u6|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]         ; N/A    ; N/A   ; N/A      ; N/A     ; 0.000               ;
-;  u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; 0.000  ; 0.000 ; -0.132   ; 0.000   ; 0.000               ;
+;  u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; 0.000  ; 0.000 ; -6.255   ; 0.000   ; 0.000               ;
 +----------------------------------------------------------------------------------+--------+-------+----------+---------+---------------------+
 
 
@@ -742,6 +730,7 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 ; SW[5]           ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; SW[6]           ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; SW[7]           ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
+; SW[8]           ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; TD_CLK27        ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; TD_DATA[0]      ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; TD_DATA[1]      ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
@@ -836,7 +825,6 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 ; MIPI_PIXEL_D[8] ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; MIPI_PIXEL_D[9] ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; SW[9]           ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
-; SW[8]           ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; KEY[3]          ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 ; MIPI_PIXEL_CLK  ; 3.3-V LVTTL  ; 2640 ps         ; 2640 ps         ;
 +-----------------+--------------+-----------------+-----------------+
@@ -1603,19 +1591,17 @@ Typical MTBF values are calculated based on the nominal silicon characteristics,
 +---------------------------------------------------------------------------------+---------------------------------------------------------------------------------+----------+----------+----------+----------+
 ; From Clock                                                                      ; To Clock                                                                        ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +---------------------------------------------------------------------------------+---------------------------------------------------------------------------------+----------+----------+----------+----------+
-; CLOCK2_50                                                                       ; CLOCK2_50                                                                       ; 5485     ; 0        ; 0        ; 0        ;
-; CLOCK_50                                                                        ; CLOCK_50                                                                        ; 1        ; 0        ; 0        ; 0        ;
-; CLOCK_50                                                                        ; MIPI_PIXEL_CLK                                                                  ; 31       ; 0        ; 0        ; 0        ;
-; MIPI_PIXEL_CLK                                                                  ; MIPI_PIXEL_CLK                                                                  ; 316      ; 0        ; 0        ; 0        ;
-; MIPI_PIXEL_CLK_ext                                                              ; MIPI_PIXEL_CLK                                                                  ; 82       ; 0        ; 0        ; 0        ;
+; CLOCK2_50                                                                       ; CLOCK2_50                                                                       ; 5420     ; 0        ; 0        ; 0        ;
+; MIPI_PIXEL_CLK                                                                  ; MIPI_PIXEL_CLK                                                                  ; 348      ; 0        ; 0        ; 0        ;
+; MIPI_PIXEL_CLK_ext                                                              ; MIPI_PIXEL_CLK                                                                  ; 90       ; 0        ; 0        ; 0        ;
 ; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; MIPI_PIXEL_CLK                                                                  ; 11       ; 0        ; 0        ; 0        ;
 ; CLOCK2_50                                                                       ; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 1776     ; 0        ; 0        ; 0        ;
-; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 1221128  ; 24       ; 552      ; 0        ;
+; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 1221149  ; 24       ; 552      ; 0        ;
 ; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 11       ; 0        ; 0        ; 0        ;
 ; CLOCK2_50                                                                       ; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; 40       ; 0        ; 0        ; 0        ;
 ; MIPI_PIXEL_CLK                                                                  ; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; 11       ; 0        ; 0        ; 0        ;
 ; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; 11       ; 0        ; 0        ; 0        ;
-; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; 8579     ; 0        ; 0        ; 0        ;
+; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; 8926     ; 0        ; 0        ; 0        ;
 +---------------------------------------------------------------------------------+---------------------------------------------------------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -1625,19 +1611,17 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +---------------------------------------------------------------------------------+---------------------------------------------------------------------------------+----------+----------+----------+----------+
 ; From Clock                                                                      ; To Clock                                                                        ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +---------------------------------------------------------------------------------+---------------------------------------------------------------------------------+----------+----------+----------+----------+
-; CLOCK2_50                                                                       ; CLOCK2_50                                                                       ; 5485     ; 0        ; 0        ; 0        ;
-; CLOCK_50                                                                        ; CLOCK_50                                                                        ; 1        ; 0        ; 0        ; 0        ;
-; CLOCK_50                                                                        ; MIPI_PIXEL_CLK                                                                  ; 31       ; 0        ; 0        ; 0        ;
-; MIPI_PIXEL_CLK                                                                  ; MIPI_PIXEL_CLK                                                                  ; 316      ; 0        ; 0        ; 0        ;
-; MIPI_PIXEL_CLK_ext                                                              ; MIPI_PIXEL_CLK                                                                  ; 82       ; 0        ; 0        ; 0        ;
+; CLOCK2_50                                                                       ; CLOCK2_50                                                                       ; 5420     ; 0        ; 0        ; 0        ;
+; MIPI_PIXEL_CLK                                                                  ; MIPI_PIXEL_CLK                                                                  ; 348      ; 0        ; 0        ; 0        ;
+; MIPI_PIXEL_CLK_ext                                                              ; MIPI_PIXEL_CLK                                                                  ; 90       ; 0        ; 0        ; 0        ;
 ; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; MIPI_PIXEL_CLK                                                                  ; 11       ; 0        ; 0        ; 0        ;
 ; CLOCK2_50                                                                       ; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 1776     ; 0        ; 0        ; 0        ;
-; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 1221128  ; 24       ; 552      ; 0        ;
+; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 1221149  ; 24       ; 552      ; 0        ;
 ; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 11       ; 0        ; 0        ; 0        ;
 ; CLOCK2_50                                                                       ; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; 40       ; 0        ; 0        ; 0        ;
 ; MIPI_PIXEL_CLK                                                                  ; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; 11       ; 0        ; 0        ; 0        ;
 ; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; 11       ; 0        ; 0        ; 0        ;
-; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; 8579     ; 0        ; 0        ; 0        ;
+; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; 8926     ; 0        ; 0        ; 0        ;
 +---------------------------------------------------------------------------------+---------------------------------------------------------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -1647,10 +1631,10 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +---------------------------------------------------------------------------------+---------------------------------------------------------------------------------+----------+----------+----------+----------+
 ; From Clock                                                                      ; To Clock                                                                        ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +---------------------------------------------------------------------------------+---------------------------------------------------------------------------------+----------+----------+----------+----------+
-; CLOCK2_50                                                                       ; MIPI_PIXEL_CLK                                                                  ; 126      ; 0        ; 0        ; 0        ;
-; CLOCK2_50                                                                       ; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 154      ; 0        ; 0        ; 0        ;
-; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 292      ; 0        ; 0        ; 0        ;
-; CLOCK2_50                                                                       ; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; 325      ; 0        ; 0        ; 0        ;
+; CLOCK2_50                                                                       ; MIPI_PIXEL_CLK                                                                  ; 130      ; 0        ; 0        ; 0        ;
+; CLOCK2_50                                                                       ; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 150      ; 0        ; 0        ; 0        ;
+; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 320      ; 0        ; 0        ; 0        ;
+; CLOCK2_50                                                                       ; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; 329      ; 0        ; 0        ; 0        ;
 +---------------------------------------------------------------------------------+---------------------------------------------------------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -1660,10 +1644,10 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +---------------------------------------------------------------------------------+---------------------------------------------------------------------------------+----------+----------+----------+----------+
 ; From Clock                                                                      ; To Clock                                                                        ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +---------------------------------------------------------------------------------+---------------------------------------------------------------------------------+----------+----------+----------+----------+
-; CLOCK2_50                                                                       ; MIPI_PIXEL_CLK                                                                  ; 126      ; 0        ; 0        ; 0        ;
-; CLOCK2_50                                                                       ; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 154      ; 0        ; 0        ; 0        ;
-; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 292      ; 0        ; 0        ; 0        ;
-; CLOCK2_50                                                                       ; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; 325      ; 0        ; 0        ; 0        ;
+; CLOCK2_50                                                                       ; MIPI_PIXEL_CLK                                                                  ; 130      ; 0        ; 0        ; 0        ;
+; CLOCK2_50                                                                       ; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 150      ; 0        ; 0        ; 0        ;
+; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk ; 320      ; 0        ; 0        ; 0        ;
+; CLOCK2_50                                                                       ; u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk       ; 329      ; 0        ; 0        ; 0        ;
 +---------------------------------------------------------------------------------+---------------------------------------------------------------------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -1923,11 +1907,11 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime TimeQuest Timing Analyzer
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Thu May 23 15:53:13 2019
+    Info: Processing started: Fri May 24 11:36:59 2019
 Info: Command: quartus_sta DE1_SOC_D8M_RTL -c DE1_SOC_D8M_RTL
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
 Warning (335093): TimeQuest Timing Analyzer is analyzing 13 combinational loops as latches. For more details, run the Check Timing command in the TimeQuest Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
@@ -1939,30 +1923,30 @@ Info (332164): Evaluating HDL-embedded SDC commands
         Info (332166): set_false_path -from *rdptr_g* -to *ws_dgrp|dffpipe_1f9:dffpipe22|dffe23a* 
         Info (332166): set_false_path -from *delayed_wrptr_g* -to *rs_dgwp|dffpipe_0f9:dffpipe13|dffe14a* 
 Info (332104): Reading SDC File: 'DE1_SOC_D8M_RTL.sdc'
-Warning (332174): Ignored filter at DE1_SOC_D8M_RTL.sdc(15): altera_reserved_tck could not be matched with a port or pin or register or keeper or net or combinational node or node File: C:/Users/Jing Jie/Documents/Courses/19 Sp/EE 371/Lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 15
-Warning (332049): Ignored create_clock at DE1_SOC_D8M_RTL.sdc(15): Argument <targets> is not an object ID File: C:/Users/Jing Jie/Documents/Courses/19 Sp/EE 371/Lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 15
-    Info (332050): create_clock -name {altera_reserved_tck} -period 40 {altera_reserved_tck} File: C:/Users/Jing Jie/Documents/Courses/19 Sp/EE 371/Lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 15
-Warning (332174): Ignored filter at DE1_SOC_D8M_RTL.sdc(16): altera_reserved_tdi could not be matched with a port File: C:/Users/Jing Jie/Documents/Courses/19 Sp/EE 371/Lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 16
-Warning (332174): Ignored filter at DE1_SOC_D8M_RTL.sdc(16): altera_reserved_tck could not be matched with a clock File: C:/Users/Jing Jie/Documents/Courses/19 Sp/EE 371/Lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 16
-Warning (332049): Ignored set_input_delay at DE1_SOC_D8M_RTL.sdc(16): Argument <targets> is an empty collection File: C:/Users/Jing Jie/Documents/Courses/19 Sp/EE 371/Lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 16
-    Info (332050): set_input_delay -clock altera_reserved_tck -clock_fall 3 [get_ports altera_reserved_tdi] File: C:/Users/Jing Jie/Documents/Courses/19 Sp/EE 371/Lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 16
-Warning (332049): Ignored set_input_delay at DE1_SOC_D8M_RTL.sdc(16): Argument -clock is not an object ID File: C:/Users/Jing Jie/Documents/Courses/19 Sp/EE 371/Lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 16
-Warning (332174): Ignored filter at DE1_SOC_D8M_RTL.sdc(17): altera_reserved_tms could not be matched with a port File: C:/Users/Jing Jie/Documents/Courses/19 Sp/EE 371/Lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 17
-Warning (332049): Ignored set_input_delay at DE1_SOC_D8M_RTL.sdc(17): Argument <targets> is an empty collection File: C:/Users/Jing Jie/Documents/Courses/19 Sp/EE 371/Lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 17
-    Info (332050): set_input_delay -clock altera_reserved_tck -clock_fall 3 [get_ports altera_reserved_tms] File: C:/Users/Jing Jie/Documents/Courses/19 Sp/EE 371/Lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 17
-Warning (332049): Ignored set_input_delay at DE1_SOC_D8M_RTL.sdc(17): Argument -clock is not an object ID File: C:/Users/Jing Jie/Documents/Courses/19 Sp/EE 371/Lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 17
-Warning (332174): Ignored filter at DE1_SOC_D8M_RTL.sdc(18): altera_reserved_tdo could not be matched with a port File: C:/Users/Jing Jie/Documents/Courses/19 Sp/EE 371/Lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 18
-Warning (332049): Ignored set_output_delay at DE1_SOC_D8M_RTL.sdc(18): Argument <targets> is an empty collection File: C:/Users/Jing Jie/Documents/Courses/19 Sp/EE 371/Lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 18
-    Info (332050): set_output_delay -clock altera_reserved_tck 3 [get_ports altera_reserved_tdo] File: C:/Users/Jing Jie/Documents/Courses/19 Sp/EE 371/Lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 18
-Warning (332049): Ignored set_output_delay at DE1_SOC_D8M_RTL.sdc(18): Argument -clock is not an object ID File: C:/Users/Jing Jie/Documents/Courses/19 Sp/EE 371/Lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 18
-Warning (332174): Ignored filter at DE1_SOC_D8M_RTL.sdc(21): u0|pll_sys|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk could not be matched with a pin File: C:/Users/Jing Jie/Documents/Courses/19 Sp/EE 371/Lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 21
-Warning (332049): Ignored create_generated_clock at DE1_SOC_D8M_RTL.sdc(21): Argument -source is an empty collection File: C:/Users/Jing Jie/Documents/Courses/19 Sp/EE 371/Lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 21
+Warning (332174): Ignored filter at DE1_SOC_D8M_RTL.sdc(15): altera_reserved_tck could not be matched with a port or pin or register or keeper or net or combinational node or node File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 15
+Warning (332049): Ignored create_clock at DE1_SOC_D8M_RTL.sdc(15): Argument <targets> is not an object ID File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 15
+    Info (332050): create_clock -name {altera_reserved_tck} -period 40 {altera_reserved_tck} File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 15
+Warning (332174): Ignored filter at DE1_SOC_D8M_RTL.sdc(16): altera_reserved_tdi could not be matched with a port File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 16
+Warning (332174): Ignored filter at DE1_SOC_D8M_RTL.sdc(16): altera_reserved_tck could not be matched with a clock File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 16
+Warning (332049): Ignored set_input_delay at DE1_SOC_D8M_RTL.sdc(16): Argument <targets> is an empty collection File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 16
+    Info (332050): set_input_delay -clock altera_reserved_tck -clock_fall 3 [get_ports altera_reserved_tdi] File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 16
+Warning (332049): Ignored set_input_delay at DE1_SOC_D8M_RTL.sdc(16): Argument -clock is not an object ID File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 16
+Warning (332174): Ignored filter at DE1_SOC_D8M_RTL.sdc(17): altera_reserved_tms could not be matched with a port File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 17
+Warning (332049): Ignored set_input_delay at DE1_SOC_D8M_RTL.sdc(17): Argument <targets> is an empty collection File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 17
+    Info (332050): set_input_delay -clock altera_reserved_tck -clock_fall 3 [get_ports altera_reserved_tms] File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 17
+Warning (332049): Ignored set_input_delay at DE1_SOC_D8M_RTL.sdc(17): Argument -clock is not an object ID File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 17
+Warning (332174): Ignored filter at DE1_SOC_D8M_RTL.sdc(18): altera_reserved_tdo could not be matched with a port File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 18
+Warning (332049): Ignored set_output_delay at DE1_SOC_D8M_RTL.sdc(18): Argument <targets> is an empty collection File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 18
+    Info (332050): set_output_delay -clock altera_reserved_tck 3 [get_ports altera_reserved_tdo] File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 18
+Warning (332049): Ignored set_output_delay at DE1_SOC_D8M_RTL.sdc(18): Argument -clock is not an object ID File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 18
+Warning (332174): Ignored filter at DE1_SOC_D8M_RTL.sdc(21): u0|pll_sys|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk could not be matched with a pin File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 21
+Warning (332049): Ignored create_generated_clock at DE1_SOC_D8M_RTL.sdc(21): Argument -source is an empty collection File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 21
     Info (332050): create_generated_clock -source [get_pins {u0|pll_sys|altera_pll_i|general[1].gpll~PLL_OUTPUT_COUNTER|divclk}] \
-                      -name clk_dram_ext [get_ports {DRAM_CLK}] File: C:/Users/Jing Jie/Documents/Courses/19 Sp/EE 371/Lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 21
-Warning (332174): Ignored filter at DE1_SOC_D8M_RTL.sdc(24): u0|pll_sys|altera_pll_i|general[3].gpll~PLL_OUTPUT_COUNTER|divclk could not be matched with a pin File: C:/Users/Jing Jie/Documents/Courses/19 Sp/EE 371/Lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 24
-Warning (332049): Ignored create_generated_clock at DE1_SOC_D8M_RTL.sdc(24): Argument -source is an empty collection File: C:/Users/Jing Jie/Documents/Courses/19 Sp/EE 371/Lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 24
+                      -name clk_dram_ext [get_ports {DRAM_CLK}] File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 21
+Warning (332174): Ignored filter at DE1_SOC_D8M_RTL.sdc(24): u0|pll_sys|altera_pll_i|general[3].gpll~PLL_OUTPUT_COUNTER|divclk could not be matched with a pin File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 24
+Warning (332049): Ignored create_generated_clock at DE1_SOC_D8M_RTL.sdc(24): Argument -source is an empty collection File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 24
     Info (332050): create_generated_clock -source [get_pins { u0|pll_sys|altera_pll_i|general[3].gpll~PLL_OUTPUT_COUNTER|divclk }] \
-                      -name clk_vga_ext [get_ports {VGA_CLK}] -invert File: C:/Users/Jing Jie/Documents/Courses/19 Sp/EE 371/Lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 24
+                      -name clk_vga_ext [get_ports {VGA_CLK}] -invert File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 24
 Warning (332043): Overwriting existing clock: MIPI_PIXEL_CLK
 Info (332110): Deriving PLL clocks
     Info (332110): create_generated_clock -source {u6|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|refclkin} -divide_by 2 -multiply_by 12 -duty_cycle 50.00 -name {u6|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]} {u6|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]}
@@ -1973,34 +1957,34 @@ Info (332110): Deriving PLL clocks
     Info (332110): create_generated_clock -source {pll_ref|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|refclkin} -divide_by 2 -multiply_by 12 -duty_cycle 50.00 -name {pll_ref|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]} {pll_ref|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]}
     Info (332110): create_generated_clock -source {pll_ref|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|vco0ph[0]} -divide_by 15 -duty_cycle 50.00 -name {pll_ref|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk} {pll_ref|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk}
 Info (332151): Clock uncertainty is not calculated until you update the timing netlist.
-Warning (332174): Ignored filter at DE1_SOC_D8M_RTL.sdc(67): clk_dram_ext could not be matched with a clock File: C:/Users/Jing Jie/Documents/Courses/19 Sp/EE 371/Lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 67
-Warning (332049): Ignored set_input_delay at DE1_SOC_D8M_RTL.sdc(67): Argument -clock is not an object ID File: C:/Users/Jing Jie/Documents/Courses/19 Sp/EE 371/Lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 67
-    Info (332050): set_input_delay -max -clock clk_dram_ext 5.9 [get_ports DRAM_DQ*] File: C:/Users/Jing Jie/Documents/Courses/19 Sp/EE 371/Lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 67
-Warning (332049): Ignored set_input_delay at DE1_SOC_D8M_RTL.sdc(68): Argument -clock is not an object ID File: C:/Users/Jing Jie/Documents/Courses/19 Sp/EE 371/Lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 68
-    Info (332050): set_input_delay -min -clock clk_dram_ext 3.0 [get_ports DRAM_DQ*] File: C:/Users/Jing Jie/Documents/Courses/19 Sp/EE 371/Lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 68
-Warning (332174): Ignored filter at DE1_SOC_D8M_RTL.sdc(71): u0|pll_sys|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk could not be matched with a clock File: C:/Users/Jing Jie/Documents/Courses/19 Sp/EE 371/Lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 71
-Warning (332049): Ignored set_multicycle_path at DE1_SOC_D8M_RTL.sdc(70): Argument <from> is an empty collection File: C:/Users/Jing Jie/Documents/Courses/19 Sp/EE 371/Lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 70
+Warning (332174): Ignored filter at DE1_SOC_D8M_RTL.sdc(67): clk_dram_ext could not be matched with a clock File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 67
+Warning (332049): Ignored set_input_delay at DE1_SOC_D8M_RTL.sdc(67): Argument -clock is not an object ID File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 67
+    Info (332050): set_input_delay -max -clock clk_dram_ext 5.9 [get_ports DRAM_DQ*] File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 67
+Warning (332049): Ignored set_input_delay at DE1_SOC_D8M_RTL.sdc(68): Argument -clock is not an object ID File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 68
+    Info (332050): set_input_delay -min -clock clk_dram_ext 3.0 [get_ports DRAM_DQ*] File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 68
+Warning (332174): Ignored filter at DE1_SOC_D8M_RTL.sdc(71): u0|pll_sys|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk could not be matched with a clock File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 71
+Warning (332049): Ignored set_multicycle_path at DE1_SOC_D8M_RTL.sdc(70): Argument <from> is an empty collection File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 70
     Info (332050): set_multicycle_path -from [get_clocks {clk_dram_ext}] \
                     -to [get_clocks {u0|pll_sys|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk}] \
-                          -setup 2            File: C:/Users/Jing Jie/Documents/Courses/19 Sp/EE 371/Lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 70
-Warning (332049): Ignored set_multicycle_path at DE1_SOC_D8M_RTL.sdc(70): Argument <to> is an empty collection File: C:/Users/Jing Jie/Documents/Courses/19 Sp/EE 371/Lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 70
-Warning (332049): Ignored set_output_delay at DE1_SOC_D8M_RTL.sdc(86): Argument -clock is not an object ID File: C:/Users/Jing Jie/Documents/Courses/19 Sp/EE 371/Lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 86
-    Info (332050): set_output_delay -max -clock clk_dram_ext 1.6  [get_ports {DRAM_DQ* DRAM_*DQM}] File: C:/Users/Jing Jie/Documents/Courses/19 Sp/EE 371/Lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 86
-Warning (332049): Ignored set_output_delay at DE1_SOC_D8M_RTL.sdc(87): Argument -clock is not an object ID File: C:/Users/Jing Jie/Documents/Courses/19 Sp/EE 371/Lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 87
-    Info (332050): set_output_delay -min -clock clk_dram_ext -0.9 [get_ports {DRAM_DQ* DRAM_*DQM}] File: C:/Users/Jing Jie/Documents/Courses/19 Sp/EE 371/Lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 87
-Warning (332049): Ignored set_output_delay at DE1_SOC_D8M_RTL.sdc(88): Argument -clock is not an object ID File: C:/Users/Jing Jie/Documents/Courses/19 Sp/EE 371/Lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 88
-    Info (332050): set_output_delay -max -clock clk_dram_ext 1.6  [get_ports {DRAM_ADDR* DRAM_BA* DRAM_RAS_N DRAM_CAS_N DRAM_WE_N DRAM_CKE DRAM_CS_N}] File: C:/Users/Jing Jie/Documents/Courses/19 Sp/EE 371/Lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 88
-Warning (332049): Ignored set_output_delay at DE1_SOC_D8M_RTL.sdc(89): Argument -clock is not an object ID File: C:/Users/Jing Jie/Documents/Courses/19 Sp/EE 371/Lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 89
-    Info (332050): set_output_delay -min -clock clk_dram_ext -0.9 [get_ports {DRAM_ADDR* DRAM_BA* DRAM_RAS_N DRAM_CAS_N DRAM_WE_N DRAM_CKE DRAM_CS_N}] File: C:/Users/Jing Jie/Documents/Courses/19 Sp/EE 371/Lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 89
-Warning (332174): Ignored filter at DE1_SOC_D8M_RTL.sdc(94): VGA_BLANK could not be matched with a port File: C:/Users/Jing Jie/Documents/Courses/19 Sp/EE 371/Lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 94
-Warning (332174): Ignored filter at DE1_SOC_D8M_RTL.sdc(94): clk_vga_ext could not be matched with a clock File: C:/Users/Jing Jie/Documents/Courses/19 Sp/EE 371/Lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 94
-Warning (332049): Ignored set_output_delay at DE1_SOC_D8M_RTL.sdc(94): Argument -clock is not an object ID File: C:/Users/Jing Jie/Documents/Courses/19 Sp/EE 371/Lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 94
-    Info (332050): set_output_delay -max -clock clk_vga_ext  0.3 [get_ports {VGA_R* VGA_G* VGA_B* VGA_BLANK}] File: C:/Users/Jing Jie/Documents/Courses/19 Sp/EE 371/Lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 94
-Warning (332049): Ignored set_output_delay at DE1_SOC_D8M_RTL.sdc(95): Argument -clock is not an object ID File: C:/Users/Jing Jie/Documents/Courses/19 Sp/EE 371/Lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 95
-    Info (332050): set_output_delay -min -clock clk_vga_ext -1.6 [get_ports {VGA_R* VGA_G* VGA_B* VGA_BLANK}] File: C:/Users/Jing Jie/Documents/Courses/19 Sp/EE 371/Lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 95
-Warning (332054): Assignment set_clock_groups is accepted but has some problems at DE1_SOC_D8M_RTL.sdc(100): Argument -group with value [get_clocks {u0|pll_sys|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk}] contains zero elements File: C:/Users/Jing Jie/Documents/Courses/19 Sp/EE 371/Lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 100
+                          -setup 2            File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 70
+Warning (332049): Ignored set_multicycle_path at DE1_SOC_D8M_RTL.sdc(70): Argument <to> is an empty collection File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 70
+Warning (332049): Ignored set_output_delay at DE1_SOC_D8M_RTL.sdc(86): Argument -clock is not an object ID File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 86
+    Info (332050): set_output_delay -max -clock clk_dram_ext 1.6  [get_ports {DRAM_DQ* DRAM_*DQM}] File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 86
+Warning (332049): Ignored set_output_delay at DE1_SOC_D8M_RTL.sdc(87): Argument -clock is not an object ID File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 87
+    Info (332050): set_output_delay -min -clock clk_dram_ext -0.9 [get_ports {DRAM_DQ* DRAM_*DQM}] File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 87
+Warning (332049): Ignored set_output_delay at DE1_SOC_D8M_RTL.sdc(88): Argument -clock is not an object ID File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 88
+    Info (332050): set_output_delay -max -clock clk_dram_ext 1.6  [get_ports {DRAM_ADDR* DRAM_BA* DRAM_RAS_N DRAM_CAS_N DRAM_WE_N DRAM_CKE DRAM_CS_N}] File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 88
+Warning (332049): Ignored set_output_delay at DE1_SOC_D8M_RTL.sdc(89): Argument -clock is not an object ID File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 89
+    Info (332050): set_output_delay -min -clock clk_dram_ext -0.9 [get_ports {DRAM_ADDR* DRAM_BA* DRAM_RAS_N DRAM_CAS_N DRAM_WE_N DRAM_CKE DRAM_CS_N}] File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 89
+Warning (332174): Ignored filter at DE1_SOC_D8M_RTL.sdc(94): VGA_BLANK could not be matched with a port File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 94
+Warning (332174): Ignored filter at DE1_SOC_D8M_RTL.sdc(94): clk_vga_ext could not be matched with a clock File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 94
+Warning (332049): Ignored set_output_delay at DE1_SOC_D8M_RTL.sdc(94): Argument -clock is not an object ID File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 94
+    Info (332050): set_output_delay -max -clock clk_vga_ext  0.3 [get_ports {VGA_R* VGA_G* VGA_B* VGA_BLANK}] File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 94
+Warning (332049): Ignored set_output_delay at DE1_SOC_D8M_RTL.sdc(95): Argument -clock is not an object ID File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 95
+    Info (332050): set_output_delay -min -clock clk_vga_ext -1.6 [get_ports {VGA_R* VGA_G* VGA_B* VGA_BLANK}] File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 95
+Warning (332054): Assignment set_clock_groups is accepted but has some problems at DE1_SOC_D8M_RTL.sdc(100): Argument -group with value [get_clocks {u0|pll_sys|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk}] contains zero elements File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 100
     Info (332050): set_clock_groups -asynchronous -group [get_clocks {u0|pll_sys|altera_pll_i|general[2].gpll~PLL_OUTPUT_COUNTER|divclk}] \
-                               -group [get_clocks {MIPI_PIXEL_CLK}] File: C:/Users/Jing Jie/Documents/Courses/19 Sp/EE 371/Lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 100
+                               -group [get_clocks {MIPI_PIXEL_CLK}] File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/DE1_SOC_D8M_RTL.sdc Line: 100
 Warning (332060): Node: MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|CLOCKMEM:c1|CK_1HZ was determined to be a clock but was found without an associated clock assignment.
     Info (13166): Register MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|ST[3] is being clocked by MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|CLOCKMEM:c1|CK_1HZ
 Warning (332060): Node: MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|CLOCKMEM:c1|CK_1HZ was determined to be a clock but was found without an associated clock assignment.
@@ -2029,56 +2013,54 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1100mV 85C Model
-Info (332146): Worst-case setup slack is 3.990
+Info (332146): Worst-case setup slack is 4.360
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     3.990               0.000 u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):    12.458               0.000 MIPI_PIXEL_CLK 
-    Info (332119):    12.747               0.000 pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):    14.069               0.000 CLOCK2_50 
-    Info (332119):    18.925               0.000 CLOCK_50 
-Info (332146): Worst-case hold slack is 0.285
+    Info (332119):     4.360               0.000 u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    12.830               0.000 pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    13.370               0.000 CLOCK2_50 
+    Info (332119):    23.393               0.000 MIPI_PIXEL_CLK 
+Info (332146): Worst-case hold slack is 0.265
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.285               0.000 pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):     0.309               0.000 u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):     0.367               0.000 CLOCK2_50 
-    Info (332119):     0.438               0.000 CLOCK_50 
-    Info (332119):     0.478               0.000 MIPI_PIXEL_CLK 
+    Info (332119):     0.265               0.000 u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.301               0.000 pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.461               0.000 CLOCK2_50 
+    Info (332119):     0.612               0.000 MIPI_PIXEL_CLK 
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
-Info (332146): Worst-case recovery slack is -0.025
+Info (332146): Worst-case recovery slack is -0.462
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -0.025              -0.132 u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):    13.342               0.000 MIPI_PIXEL_CLK 
-    Info (332119):    13.864               0.000 pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
-Info (332146): Worst-case removal slack is 0.339
+    Info (332119):    -0.462              -6.255 u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    12.461               0.000 pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    13.517               0.000 MIPI_PIXEL_CLK 
+Info (332146): Worst-case removal slack is 0.298
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.339               0.000 u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):     0.510               0.000 pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):     0.917               0.000 MIPI_PIXEL_CLK 
+    Info (332119):     0.298               0.000 u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.460               0.000 pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.959               0.000 MIPI_PIXEL_CLK 
 Info (332146): Worst-case minimum pulse width slack is 1.666
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):     1.666               0.000 pll_ref1|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0] 
     Info (332119):     1.666               0.000 pll_ref|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0] 
     Info (332119):     1.666               0.000 u6|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0] 
-    Info (332119):     3.783               0.000 u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):     8.744               0.000 CLOCK2_50 
-    Info (332119):     9.274               0.000 CLOCK_50 
+    Info (332119):     3.790               0.000 u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     8.595               0.000 CLOCK2_50 
     Info (332119):     9.670               0.000 CLOCK3_50 
-    Info (332119):    18.455               0.000 MIPI_PIXEL_CLK 
-    Info (332119):    18.777               0.000 pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
-Info (332114): Report Metastability: Found 126 synchronizer chains.
+    Info (332119):     9.670               0.000 CLOCK_50 
+    Info (332119):    18.384               0.000 MIPI_PIXEL_CLK 
+    Info (332119):    18.785               0.000 pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+Info (332114): Report Metastability: Found 124 synchronizer chains.
     Info (332114): Worst-Case MTBF of Design is 1e+09 years or 3.15e+16 seconds.
     Info (332114): Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
 
-    Info (332114): Number of Synchronizer Chains Found: 126
-    Info (332114): Shortest Synchronizer Chain: 1 Registers
-    Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 0.635
-    Info (332114): Worst Case Available Settling Time: 7.751 ns
+    Info (332114): Number of Synchronizer Chains Found: 124
+    Info (332114): Shortest Synchronizer Chain: 2 Registers
+    Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 0.645
+    Info (332114): Worst Case Available Settling Time: 7.852 ns
     Info (332114): 
     Info (332114): Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
     Info (332114):   - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 79.4
@@ -2113,54 +2095,54 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
     Info (332098): Cell: u6|altpll_component|auto_generated|generic_pll1~PLL_REFCLK_SELECT  from: clkin[0]  to: clkout
     Info (332098): Cell: u6|altpll_component|auto_generated|generic_pll2~PLL_OUTPUT_COUNTER  from: vco0ph[0]  to: divclk
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
-Info (332146): Worst-case setup slack is 4.054
+Info (332146): Worst-case setup slack is 4.437
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     4.054               0.000 u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):    12.375               0.000 MIPI_PIXEL_CLK 
-    Info (332119):    12.853               0.000 pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):    14.087               0.000 CLOCK2_50 
-    Info (332119):    18.962               0.000 CLOCK_50 
-Info (332146): Worst-case hold slack is 0.269
+    Info (332119):     4.437               0.000 u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    12.999               0.000 pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    13.372               0.000 CLOCK2_50 
+    Info (332119):    22.835               0.000 MIPI_PIXEL_CLK 
+Info (332146): Worst-case hold slack is 0.244
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.269               0.000 pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):     0.292               0.000 u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):     0.368               0.000 CLOCK2_50 
-    Info (332119):     0.412               0.000 CLOCK_50 
-    Info (332119):     0.454               0.000 MIPI_PIXEL_CLK 
-Info (332146): Worst-case recovery slack is 0.320
+    Info (332119):     0.244               0.000 u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.281               0.000 pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.458               0.000 CLOCK2_50 
+    Info (332119):     0.588               0.000 MIPI_PIXEL_CLK 
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the TimeQuest Timing Analyzer.
+Info (332146): Worst-case recovery slack is -0.105
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.320               0.000 u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):    13.388               0.000 MIPI_PIXEL_CLK 
-    Info (332119):    13.998               0.000 pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
-Info (332146): Worst-case removal slack is 0.354
+    Info (332119):    -0.105              -0.514 u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    12.703               0.000 pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    13.594               0.000 MIPI_PIXEL_CLK 
+Info (332146): Worst-case removal slack is 0.314
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.354               0.000 u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):     0.523               0.000 pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):     1.000               0.000 MIPI_PIXEL_CLK 
+    Info (332119):     0.314               0.000 u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.462               0.000 pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.964               0.000 MIPI_PIXEL_CLK 
 Info (332146): Worst-case minimum pulse width slack is 1.666
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):     1.666               0.000 pll_ref1|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0] 
     Info (332119):     1.666               0.000 pll_ref|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0] 
     Info (332119):     1.666               0.000 u6|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0] 
-    Info (332119):     3.756               0.000 u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):     8.716               0.000 CLOCK2_50 
-    Info (332119):     9.331               0.000 CLOCK_50 
+    Info (332119):     3.764               0.000 u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     8.588               0.000 CLOCK2_50 
     Info (332119):     9.673               0.000 CLOCK3_50 
-    Info (332119):    18.489               0.000 MIPI_PIXEL_CLK 
-    Info (332119):    18.757               0.000 pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
-Info (332114): Report Metastability: Found 126 synchronizer chains.
+    Info (332119):     9.673               0.000 CLOCK_50 
+    Info (332119):    18.419               0.000 MIPI_PIXEL_CLK 
+    Info (332119):    18.756               0.000 pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+Info (332114): Report Metastability: Found 124 synchronizer chains.
     Info (332114): Worst-Case MTBF of Design is 1e+09 years or 3.15e+16 seconds.
     Info (332114): Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
 
-    Info (332114): Number of Synchronizer Chains Found: 126
-    Info (332114): Shortest Synchronizer Chain: 1 Registers
-    Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 0.635
-    Info (332114): Worst Case Available Settling Time: 7.812 ns
+    Info (332114): Number of Synchronizer Chains Found: 124
+    Info (332114): Shortest Synchronizer Chain: 2 Registers
+    Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 0.645
+    Info (332114): Worst Case Available Settling Time: 7.871 ns
     Info (332114): 
     Info (332114): Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
     Info (332114):   - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 5.2
@@ -2195,54 +2177,52 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
     Info (332098): Cell: u6|altpll_component|auto_generated|generic_pll1~PLL_REFCLK_SELECT  from: clkin[0]  to: clkout
     Info (332098): Cell: u6|altpll_component|auto_generated|generic_pll2~PLL_OUTPUT_COUNTER  from: vco0ph[0]  to: divclk
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
-Info (332146): Worst-case setup slack is 6.469
+Info (332146): Worst-case setup slack is 6.652
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     6.469               0.000 u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):    14.625               0.000 MIPI_PIXEL_CLK 
-    Info (332119):    15.615               0.000 pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):    16.379               0.000 CLOCK2_50 
-    Info (332119):    19.340               0.000 CLOCK_50 
-Info (332146): Worst-case hold slack is 0.163
+    Info (332119):     6.652               0.000 u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    15.589               0.000 CLOCK2_50 
+    Info (332119):    15.621               0.000 pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    25.380               0.000 MIPI_PIXEL_CLK 
+Info (332146): Worst-case hold slack is 0.170
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.163               0.000 pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):     0.174               0.000 u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):     0.200               0.000 CLOCK2_50 
-    Info (332119):     0.239               0.000 CLOCK_50 
-    Info (332119):     0.257               0.000 MIPI_PIXEL_CLK 
-Info (332146): Worst-case recovery slack is 3.149
+    Info (332119):     0.170               0.000 u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.171               0.000 pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.225               0.000 CLOCK2_50 
+    Info (332119):     0.279               0.000 MIPI_PIXEL_CLK 
+Info (332146): Worst-case recovery slack is 2.946
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     3.149               0.000 u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):    14.869               0.000 MIPI_PIXEL_CLK 
-    Info (332119):    16.010               0.000 pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
-Info (332146): Worst-case removal slack is 0.288
+    Info (332119):     2.946               0.000 u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    14.834               0.000 pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    15.059               0.000 MIPI_PIXEL_CLK 
+Info (332146): Worst-case removal slack is 0.205
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.288               0.000 u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):     0.376               0.000 pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):     0.762               0.000 MIPI_PIXEL_CLK 
+    Info (332119):     0.205               0.000 u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.314               0.000 pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.701               0.000 MIPI_PIXEL_CLK 
 Info (332146): Worst-case minimum pulse width slack is 1.666
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):     1.666               0.000 pll_ref1|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0] 
     Info (332119):     1.666               0.000 pll_ref|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0] 
     Info (332119):     1.666               0.000 u6|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0] 
-    Info (332119):     3.888               0.000 u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):     8.693               0.000 CLOCK2_50 
-    Info (332119):     9.141               0.000 CLOCK_50 
+    Info (332119):     3.892               0.000 u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     8.569               0.000 CLOCK2_50 
     Info (332119):     9.336               0.000 CLOCK3_50 
-    Info (332119):    17.923               0.000 MIPI_PIXEL_CLK 
-    Info (332119):    18.890               0.000 pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
-Info (332114): Report Metastability: Found 126 synchronizer chains.
+    Info (332119):     9.336               0.000 CLOCK_50 
+    Info (332119):    17.857               0.000 MIPI_PIXEL_CLK 
+    Info (332119):    18.892               0.000 pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+Info (332114): Report Metastability: Found 124 synchronizer chains.
     Info (332114): Worst-Case MTBF of Design is 1e+09 years or 3.15e+16 seconds.
     Info (332114): Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
 
-    Info (332114): Number of Synchronizer Chains Found: 126
-    Info (332114): Shortest Synchronizer Chain: 1 Registers
-    Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 0.635
-    Info (332114): Worst Case Available Settling Time: 8.507 ns
+    Info (332114): Number of Synchronizer Chains Found: 124
+    Info (332114): Shortest Synchronizer Chain: 2 Registers
+    Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 0.645
+    Info (332114): Worst Case Available Settling Time: 8.663 ns
     Info (332114): 
     Info (332114): Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
     Info (332114):   - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 79.4
@@ -2275,54 +2255,52 @@ Info (332097): The following timing edges are non-unate.  TimeQuest will assume 
     Info (332098): Cell: u6|altpll_component|auto_generated|generic_pll1~PLL_REFCLK_SELECT  from: clkin[0]  to: clkout
     Info (332098): Cell: u6|altpll_component|auto_generated|generic_pll2~PLL_OUTPUT_COUNTER  from: vco0ph[0]  to: divclk
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
-Info (332146): Worst-case setup slack is 6.709
+Info (332146): Worst-case setup slack is 6.864
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     6.709               0.000 u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):    15.048               0.000 MIPI_PIXEL_CLK 
-    Info (332119):    15.955               0.000 pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):    16.644               0.000 CLOCK2_50 
-    Info (332119):    19.384               0.000 CLOCK_50 
-Info (332146): Worst-case hold slack is 0.150
+    Info (332119):     6.864               0.000 u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    15.936               0.000 CLOCK2_50 
+    Info (332119):    15.993               0.000 pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    26.497               0.000 MIPI_PIXEL_CLK 
+Info (332146): Worst-case hold slack is 0.140
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.150               0.000 pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):     0.160               0.000 u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):     0.188               0.000 CLOCK2_50 
-    Info (332119):     0.213               0.000 CLOCK_50 
-    Info (332119):     0.225               0.000 MIPI_PIXEL_CLK 
-Info (332146): Worst-case recovery slack is 3.907
+    Info (332119):     0.140               0.000 u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.156               0.000 pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.221               0.000 CLOCK2_50 
+    Info (332119):     0.250               0.000 MIPI_PIXEL_CLK 
+Info (332146): Worst-case recovery slack is 3.702
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     3.907               0.000 u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):    15.440               0.000 MIPI_PIXEL_CLK 
-    Info (332119):    16.370               0.000 pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
-Info (332146): Worst-case removal slack is 0.198
+    Info (332119):     3.702               0.000 u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    15.374               0.000 pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):    15.587               0.000 MIPI_PIXEL_CLK 
+Info (332146): Worst-case removal slack is 0.126
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.198               0.000 u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):     0.317               0.000 pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):     0.672               0.000 MIPI_PIXEL_CLK 
+    Info (332119):     0.126               0.000 u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.235               0.000 pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     0.602               0.000 MIPI_PIXEL_CLK 
 Info (332146): Worst-case minimum pulse width slack is 1.666
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):     1.666               0.000 pll_ref1|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0] 
     Info (332119):     1.666               0.000 pll_ref|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0] 
     Info (332119):     1.666               0.000 u6|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0] 
-    Info (332119):     3.890               0.000 u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
-    Info (332119):     8.667               0.000 CLOCK2_50 
-    Info (332119):     9.102               0.000 CLOCK_50 
+    Info (332119):     3.892               0.000 u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+    Info (332119):     8.565               0.000 CLOCK2_50 
     Info (332119):     9.286               0.000 CLOCK3_50 
-    Info (332119):    17.925               0.000 MIPI_PIXEL_CLK 
-    Info (332119):    18.889               0.000 pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
-Info (332114): Report Metastability: Found 126 synchronizer chains.
+    Info (332119):     9.286               0.000 CLOCK_50 
+    Info (332119):    17.873               0.000 MIPI_PIXEL_CLK 
+    Info (332119):    18.890               0.000 pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk 
+Info (332114): Report Metastability: Found 124 synchronizer chains.
     Info (332114): Worst-Case MTBF of Design is 1e+09 years or 3.15e+16 seconds.
     Info (332114): Typical MTBF of Design is 1e+09 years or 3.15e+16 seconds.
 
-    Info (332114): Number of Synchronizer Chains Found: 126
-    Info (332114): Shortest Synchronizer Chain: 1 Registers
-    Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 0.635
-    Info (332114): Worst Case Available Settling Time: 8.652 ns
+    Info (332114): Number of Synchronizer Chains Found: 124
+    Info (332114): Shortest Synchronizer Chain: 2 Registers
+    Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 0.645
+    Info (332114): Worst Case Available Settling Time: 8.771 ns
     Info (332114): 
     Info (332114): Worst-Case MTBF values are calculated based on the worst-case silicon characteristics, with worst-case operating conditions.
     Info (332114):   - Under worst-case conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 5.2
@@ -2330,10 +2308,10 @@ Info (332114): Report Metastability: Found 126 synchronizer chains.
     Info (332114):   - Under typical conditions, an increase of 100ps in available settling time will increase MTBF values by a factor of 17.8
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
-Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 63 warnings
-    Info: Peak virtual memory: 5273 megabytes
-    Info: Processing ended: Thu May 23 15:53:35 2019
-    Info: Elapsed time: 00:00:22
-    Info: Total CPU time (on all processors): 00:00:36
+Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 64 warnings
+    Info: Peak virtual memory: 5246 megabytes
+    Info: Processing ended: Fri May 24 11:37:22 2019
+    Info: Elapsed time: 00:00:23
+    Info: Total CPU time (on all processors): 00:00:29
 
 
