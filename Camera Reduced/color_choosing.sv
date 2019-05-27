@@ -1,6 +1,6 @@
 module color_choosing (clk, reset, button_right, color);
  input logic clk, reset, button_right;
- output logic [23:0] color;
+ output logic [6:0] color;
  
  enum {white, black, red, blue, yellow, green, purple} ps, ns;
  
@@ -32,18 +32,18 @@ module color_choosing (clk, reset, button_right, color);
  
  always_comb begin
   if(ps== white)
-   color = 24'hffffff;
+   color = 7'b1000000;
   else if (ps == black)
-   color = 24'h000001;
+   color = 7'b0100000;
   else if (ps == red)
-   color = 24'hff0000;
+   color = 7'b0010000;
   else if (ps == blue)
-   color = 24'h0000ff;
+   color = 7'b0001000;
   else if (ps == yellow)
-   color = 24'hffff00; 
+   color = 7'b0000100; 
   else if (ps == green)
-   color = 24'h00ff00;
+   color = 7'b0000010;
   else
-   color = 24'hff00ff;
+   color = 7'b0000001;
  end
 endmodule

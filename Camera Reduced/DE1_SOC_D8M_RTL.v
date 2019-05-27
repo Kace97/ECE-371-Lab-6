@@ -310,6 +310,7 @@ RAW2RGB_J				u4	(
                      .VGA_VS       ( pre_VGA_VS ),	
 							.VGA_HS       ( pre_VGA_HS ), 
 							.mouse_overwrite(mouse_overwrite),
+							.color_ram_data (color_rd_data),
 	                  			
 							.oRed         ( RED  ),
 							.oGreen       ( GREEN),
@@ -399,22 +400,34 @@ wire button_left, button_right, button_middle;
 wire [9:0] bin_x, bin_y;
 //add the mouse to be displayed on the monitor
 ps2 mouse(.start(~KEY[2]),         // transmit instrucions to device
-		.reset(~KEY[2]),         // FSM reset signal
+		.reset(~KEY[1]),         // FSM reset signal
 		.CLOCK_50(CLOCK_50),      //clock source
-		//.PS2_CLK(PS2_CLK),       //ps2_clock signal inout
-		//.PS2_DAT(PS2_DAT),       //ps2_data  signal inout
+		.PS2_CLK(PS2_CLK),       //ps2_clock signal inout
+		.PS2_DAT(PS2_DAT),       //ps2_data  signal inout
 		.button_left(button_left),   //left button press display
 		.button_right(button_right),  //right button press display
 		.button_middle(button_middle), //middle button press display
 		.bin_x(bin_x),         //binned X position with hysteresis
 		.bin_y(bin_y)        );
 		
+//ps2_mouse mouse (.clk(CLOCK_50), .reset(~KEY[2]), .ps2_clk(PS2_CLK), .ps2_data(PS2_DAT), .mx(bin_x), .my(bin_y), .btn_click({button_left, button_middle, button_right}));
+		
 wire mouse_overwrite;
-assign mouse_overwrite = ((VGA_H_CNT >= 320-2) & (VGA_H_CNT <= 320+2)) & (VGA_V_CNT == 240) | (VGA_H_CNT == 320) & (VGA_V_CNT >= 240-2) & (VGA_V_CNT <= 240+2);
+assign mouse_overwrite = ((VGA_H_CNT >= bin_x-2) & (VGA_H_CNT <= bin_x+2)) & (VGA_V_CNT == bin_y) | (VGA_H_CNT == bin_x) & (VGA_V_CNT >= bin_y-2) & (VGA_V_CNT <= bin_y+2);
 
 wire freeze, flop;
 inputff freeze_frame (.clk(CLOCK_50), .reset(~KEY[2]), .in(SW[8]), .out(freeze), .flop(flop));
 
+wire [6:0] color_wr_data; 
+wire [23:0] color_rd_data;
+wire [9:0] color_rd_addr, color_wr_addr;
+assign color_rd_addr = VGA_H_CNT + VGA_V_CNT * 640;
+assign color_wr_addr = bin_x + bin_y * 640;
+//paint over camera
+paint_RAM paint (.clk(CLOCK_50), .reset(reset), .wr_addr(color_wr_addr), .wren(button_left), .rd_addr(color_rd_addr), .wr_data(color_wr_ata), .rd_data(color_rd_data));
+
+//choose color for paint
+color_choosing colorChoice (.clk(CLOCK_50), .reset(reset), .button_right(button_right), .color(color_wr_data));
 endmodule
 
 

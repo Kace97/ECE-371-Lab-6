@@ -8,6 +8,7 @@ input           READ_Request ,
 input           VGA_VS ,	
 input           VGA_HS ,	
 input				 mouse_overwrite, 
+input		[23:0] color_ram_data,
 output	[7:0] oRed,
 output 	[7:0] oGreen,
 output	[7:0] oBlue
@@ -24,12 +25,16 @@ wire 		[9:0]	mCCD_G;
 wire 		[9:0]	mCCD_B;
 wire	[10:0]	mX_Cont;
 wire	[10:0]	mY_Cont;
+wire [7:0] red, blue, green;
 
 
 //-------- RGB OUT ---- 
-assign   oRed	 = mouse_overwrite ? 8'hFF : mCCD_R[9:2];
-assign  oGreen  = mouse_overwrite ? 8'hFF : mCCD_G[9:2];
-assign	oBlue	 = mouse_overwrite ? 8'hFF : mCCD_B[9:2];
+assign red = (color_ram_data == 0) ? mCCD_R[9:2] : color_ram_data[23:16];
+assign green = (color_ram_data == 0) ? mCCD_G[9:2] : color_ram_data[15:8];
+assign blue = (color_ram_data == 0) ? mCCD_B[9:2] : color_ram_data[7:0];
+assign   oRed	 = mouse_overwrite ? 8'hFF : red;
+assign  oGreen  = mouse_overwrite ? 8'hFF : green;
+assign	oBlue	 = mouse_overwrite ? 8'hFF : blue;
 
 
 //--------
