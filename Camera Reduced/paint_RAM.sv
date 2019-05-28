@@ -4,7 +4,7 @@ module paint_RAM #(parameter N = 10) (clk, reset, wr_addr, wren, rd_addr, wr_dat
  input logic [6:0] wr_data;
  output logic [23:0] rd_data;
  
- logic [6:0] RAM [0:640*480];
+ logic [2:0] RAM [0:640*480];
  logic rd_color;
  logic [19:0] count;
  
@@ -27,21 +27,23 @@ module paint_RAM #(parameter N = 10) (clk, reset, wr_addr, wren, rd_addr, wr_dat
  
  assign rd_color = RAM[rd_addr];
  
- //output the desired color
+ //output the desired color or erase
  always_comb begin
-  if(rd_color == 7'b1000000)
+  if(rd_color == 3'b001) //white
    rd_data = 24'hFFFFFF;
-  else if(rd_color == 7'b0100000)
+  else if(rd_color == 3'b010) //black
    rd_data = 24'h000001;
-  else if(rd_color == 7'b0010000)
+  else if(rd_color == 3'b011) //red
    rd_data = 24'hFF0000;
-  else if(rd_color == 7'b0001000)
+  else if(rd_color == 3'b100) //blue
    rd_data = 24'h0000FF;
-  else if(rd_color == 7'b0000100)
+  else if(rd_color == 3'b101) //yellow
    rd_data = 24'hFFFF00;
-  else if(rd_color == 7'b0000010)
-   rd_data = 24'h00FF00;
-  else
+  else if(rd_color == 3'b110) //green
+   rd_data = 24'h00FF00; 
+  else if(rd_color == 3'b111) //purple
    rd_data = 24'hFF00FF;
+  else
+   rd_data = 24'h000000; //erase
  end
 endmodule

@@ -1,8 +1,8 @@
 module color_choosing (clk, reset, button_right, color);
  input logic clk, reset, button_right;
- output logic [6:0] color;
+ output logic [2:0] color;
  
- enum {white, black, red, blue, yellow, green, purple} ps, ns;
+ enum {white, black, red, blue, yellow, green, purple, erase} ps, ns;
  
  always_comb begin
   case(ps)
@@ -18,8 +18,10 @@ module color_choosing (clk, reset, button_right, color);
 		else ns = yellow;
 	green: if(button_right) ns = purple;
 		else ns = green;
-	purple: if(button_right) ns = white;
+	purple: if(button_right) ns = erase;
 		else ns = purple;
+	erase: if(button_right) ns = white;
+		else ns = erase;
   endcase
  end
  
@@ -31,19 +33,21 @@ module color_choosing (clk, reset, button_right, color);
  end
  
  always_comb begin
-  if(ps== white)
-   color = 7'b1000000;
+  if(ps== erase)
+   color = 3'b000;
+  else if (ps == white)
+   color = 3'b001;
   else if (ps == black)
-   color = 7'b0100000;
+   color = 3'b010;
   else if (ps == red)
-   color = 7'b0010000;
+   color = 3'b011;
   else if (ps == blue)
-   color = 7'b0001000;
+   color = 3'b100; 
   else if (ps == yellow)
-   color = 7'b0000100; 
+   color = 3'b101;
   else if (ps == green)
-   color = 7'b0000010;
+   color = 3'b110;
   else
-   color = 7'b0000001;
+   color = 3'b111;
  end
 endmodule

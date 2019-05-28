@@ -138,7 +138,6 @@ module DE1_SOC_D8M_RTL(
 					.oVGA_B(post_VGA_B), .oVGA_G(post_VGA_G), .oVGA_R(post_VGA_R),
 					.oVGA_HS(post_VGA_HS), .oVGA_VS(post_VGA_VS),
 					.oVGA_SYNC_N(post_VGA_SYNC_N), .oVGA_BLANK_N(post_VGA_BLANK_N),
-					.HEX0(HEX0), .HEX1(HEX1), .HEX2(HEX2), .HEX3(HEX3), .HEX4(HEX4), .HEX5(HEX5),
 					.LEDR(KEDR), .KEY(KEY[1:0]), .SW(SW[8:0]));
 					
 	assign VGA_BLANK_N = post_VGA_BLANK_N;
@@ -418,7 +417,7 @@ assign mouse_overwrite = ((VGA_H_CNT >= bin_x-2) & (VGA_H_CNT <= bin_x+2)) & (VG
 wire freeze, flop;
 inputff freeze_frame (.clk(CLOCK_50), .reset(~KEY[2]), .in(SW[8]), .out(freeze), .flop(flop));
 
-wire [6:0] color_wr_data; 
+wire [2:0] color_wr_data; 
 wire [23:0] color_rd_data;
 wire [9:0] color_rd_addr, color_wr_addr;
 assign color_rd_addr = VGA_H_CNT + VGA_V_CNT * 640;
@@ -428,6 +427,9 @@ paint_RAM paint (.clk(CLOCK_50), .reset(reset), .wr_addr(color_wr_addr), .wren(b
 
 //choose color for paint
 color_choosing colorChoice (.clk(CLOCK_50), .reset(reset), .button_right(button_right), .color(color_wr_data));
+
+//hex display
+hex_display hex (.data(color_wr_data), .HEX0(HEX0), .HEX1(HEX1), .HEX2(HEX2), .HEX3(HEX3), .HEX4(HEX4), .HEX5(HEX5));
 endmodule
 
 
