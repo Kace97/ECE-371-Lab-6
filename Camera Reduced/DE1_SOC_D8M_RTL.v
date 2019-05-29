@@ -423,10 +423,10 @@ wire [9:0] color_rd_addr, color_wr_addr;
 assign color_rd_addr = VGA_H_CNT + VGA_V_CNT * 640;
 assign color_wr_addr = bin_x + bin_y * 640;
 //paint over camera
-paint_RAM paint (.clk(CLOCK_50), .reset(reset), .wr_addr(color_wr_addr), .wren(button_left), .rd_addr(color_rd_addr), .wr_data(color_wr_ata), .rd_data(color_rd_data));
+paint_RAM paint (.clk(CLOCK_50), .reset(~KEY[2]), .wr_addr(color_wr_addr), .wren(button_left), .rd_addr(color_rd_addr), .wr_data(color_wr_ata), .rd_data(color_rd_data));
 
 //choose color for paint
-color_choosing colorChoice (.clk(CLOCK_50), .reset(reset), .button_right(button_right), .color(color_wr_data));
+color_choosing colorChoice (.clk(CLOCK_50), .reset(~KEY[2]), .button_right(button_right), .color(color_wr_data));
 
 //hex display
 hex_display hex (.data(color_wr_data), .HEX0(HEX0), .HEX1(HEX1), .HEX2(HEX2), .HEX3(HEX3), .HEX4(HEX4), .HEX5(HEX5));

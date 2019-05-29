@@ -2,25 +2,33 @@ module color_choosing (clk, reset, button_right, color);
  input logic clk, reset, button_right;
  output logic [2:0] color;
  
+ //seperate the right clicks of the machine
+ logic in, hold;
+ always_ff @(posedge clk) begin
+	if (button_right) hold <= 1'b1;
+	else if (~button_right & hold) in <= 1'b1;
+	else in <= 1'b0;
+	end//ff
+ 
  enum {white, black, red, blue, yellow, green, purple, erase} ps, ns;
  
  always_comb begin
   case(ps)
-   white: if(button_right) ns = black;
+   white: if(in) ns = black;
 		else ns = white;
-	black: if(button_right) ns = red;
+	black: if(in) ns = red;
 		else ns = black;
-	red: if(button_right) ns = blue;
+	red: if(in) ns = blue;
 		else ns = red;
-	blue: if(button_right) ns = yellow;
+	blue: if(in) ns = yellow;
 		else ns = blue;
-	yellow: if(button_right) ns = green;
+	yellow: if(in) ns = green;
 		else ns = yellow;
-	green: if(button_right) ns = purple;
+	green: if(in) ns = purple;
 		else ns = green;
-	purple: if(button_right) ns = erase;
+	purple: if(in) ns = erase;
 		else ns = purple;
-	erase: if(button_right) ns = white;
+	erase: if(in) ns = white;
 		else ns = erase;
   endcase
  end

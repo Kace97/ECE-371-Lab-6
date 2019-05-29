@@ -448,11 +448,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "CLOCK2_50",
+					"name" : "KEY[2]",
 					"strict" : false
 				},
 				{
-					"name" : "KEY[2]",
+					"name" : "CLOCK2_50",
 					"strict" : false
 				},
 				{
@@ -465,10 +465,6 @@
 				},
 				{
 					"name" : "SW[0]",
-					"strict" : false
-				},
-				{
-					"name" : "KEY[1]",
 					"strict" : false
 				},
 				{
@@ -517,6 +513,10 @@
 				},
 				{
 					"name" : "MIPI_PIXEL_D[9]",
+					"strict" : false
+				},
+				{
+					"name" : "KEY[1]",
 					"strict" : false
 				},
 				{

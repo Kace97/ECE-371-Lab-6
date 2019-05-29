@@ -40,10 +40,10 @@
 // --------------------------------------------------------------------
 module ps2
 	#(
-		parameter WIDTH = 10,
-		parameter HEIGHT = 10,
-		parameter BIN = 10,
-		parameter HYSTERESIS = 3
+		parameter WIDTH = 640,
+		parameter HEIGHT = 480,
+		parameter BIN = 30,
+		parameter HYSTERESIS = 6
 	)
 	(
 		start,         // transmit instrucions to device
