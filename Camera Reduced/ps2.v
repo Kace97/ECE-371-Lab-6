@@ -40,10 +40,10 @@
 // --------------------------------------------------------------------
 module ps2
 	#(
-		parameter WIDTH = 640,
-		parameter HEIGHT = 480,
-		parameter BIN = 30,
-		parameter HYSTERESIS = 6
+		parameter WIDTH = 1024,
+		parameter HEIGHT = 512,
+		parameter BIN = 10,
+		parameter HYSTERESIS = 3
 	)
 	(
 		start,         // transmit instrucions to device
@@ -310,11 +310,3 @@ begin
      cur_state <= nex_state;
 end
 endmodule
-
-
-     
-
-
-     
-
-
