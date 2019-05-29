@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE1_SOC_D8M_RTL
-Tue May 28 12:10:59 2019
+Tue May 28 22:50:32 2019
 Quartus Prime Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 
 
@@ -149,13 +149,13 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Tue May 28 12:10:59 2019       ;
+; Analysis & Synthesis Status     ; Successful - Tue May 28 22:50:31 2019       ;
 ; Quartus Prime Version           ; 17.0.0 Build 595 04/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; DE1_SOC_D8M_RTL                             ;
 ; Top-level Entity Name           ; DE1_SOC_D8M_RTL                             ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 2169                                        ;
+; Total registers                 ; 2183                                        ;
 ; Total pins                      ; 226                                         ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 88,064                                      ;
@@ -374,16 +374,16 @@ agreement for further details.
 +---------------------------------------------+-----------------------------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                                               ;
 +---------------------------------------------+-----------------------------------------------------------------------------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 2073                                                                                                ;
+; Estimate of Logic utilization (ALMs needed) ; 2074                                                                                                ;
 ;                                             ;                                                                                                     ;
-; Combinational ALUT usage for logic          ; 3218                                                                                                ;
+; Combinational ALUT usage for logic          ; 3219                                                                                                ;
 ;     -- 7 input functions                    ; 32                                                                                                  ;
-;     -- 6 input functions                    ; 777                                                                                                 ;
-;     -- 5 input functions                    ; 480                                                                                                 ;
-;     -- 4 input functions                    ; 416                                                                                                 ;
-;     -- <=3 input functions                  ; 1513                                                                                                ;
+;     -- 6 input functions                    ; 775                                                                                                 ;
+;     -- 5 input functions                    ; 483                                                                                                 ;
+;     -- 4 input functions                    ; 418                                                                                                 ;
+;     -- <=3 input functions                  ; 1511                                                                                                ;
 ;                                             ;                                                                                                     ;
-; Dedicated logic registers                   ; 2169                                                                                                ;
+; Dedicated logic registers                   ; 2183                                                                                                ;
 ;                                             ;                                                                                                     ;
 ; I/O pins                                    ; 226                                                                                                 ;
 ; Total MLAB memory bits                      ; 0                                                                                                   ;
@@ -396,8 +396,8 @@ agreement for further details.
 ;                                             ;                                                                                                     ;
 ; Maximum fan-out node                        ; VIDEO_PLL:pll_ref1|altpll:altpll_component|VIDEO_PLL_altpll:auto_generated|wire_generic_pll1_outclk ;
 ; Maximum fan-out                             ; 669                                                                                                 ;
-; Total fan-out                               ; 21087                                                                                               ;
-; Average fan-out                             ; 3.54                                                                                                ;
+; Total fan-out                               ; 21134                                                                                               ;
+; Average fan-out                             ; 3.53                                                                                                ;
 +---------------------------------------------+-----------------------------------------------------------------------------------------------------+
 
 
@@ -406,7 +406,7 @@ agreement for further details.
 +--------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------+--------------+
 ; Compilation Hierarchy Node                       ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                               ; Entity Name               ; Library Name ;
 +--------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------+--------------+
-; |DE1_SOC_D8M_RTL                                 ; 3218 (109)          ; 2169 (0)                  ; 88064             ; 2          ; 226  ; 0            ; |DE1_SOC_D8M_RTL                                                                                                                                                  ; DE1_SOC_D8M_RTL           ; work         ;
+; |DE1_SOC_D8M_RTL                                 ; 3219 (109)          ; 2183 (0)                  ; 88064             ; 2          ; 226  ; 0            ; |DE1_SOC_D8M_RTL                                                                                                                                                  ; DE1_SOC_D8M_RTL           ; work         ;
 ;    |AUTO_FOCUS_ON:vd|                            ; 40 (40)             ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_RTL|AUTO_FOCUS_ON:vd                                                                                                                                 ; AUTO_FOCUS_ON             ; work         ;
 ;    |CLOCK_DELAY:del1|                            ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_RTL|CLOCK_DELAY:del1                                                                                                                                 ; CLOCK_DELAY               ; work         ;
 ;    |FOCUS_ADJ:adl|                               ; 868 (17)            ; 585 (24)                  ; 0                 ; 2          ; 0    ; 0            ; |DE1_SOC_D8M_RTL|FOCUS_ADJ:adl                                                                                                                                    ; FOCUS_ADJ                 ; work         ;
@@ -434,7 +434,7 @@ agreement for further details.
 ;          |I2C_READ_DATA:rd|                      ; 66 (66)             ; 49 (49)                   ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|I2C_READ_DATA:rd                                                                         ; I2C_READ_DATA             ; work         ;
 ;          |I2C_WRITE_PTR:wpt|                     ; 69 (69)             ; 35 (35)                   ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|I2C_WRITE_PTR:wpt                                                                        ; I2C_WRITE_PTR             ; work         ;
 ;          |I2C_WRITE_WDATA:wrd|                   ; 52 (52)             ; 28 (28)                   ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|I2C_WRITE_WDATA:wrd                                                                      ; I2C_WRITE_WDATA           ; work         ;
-;    |RAW2RGB_J:u4|                                ; 82 (4)              ; 61 (1)                    ; 61440             ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_RTL|RAW2RGB_J:u4                                                                                                                                     ; RAW2RGB_J                 ; work         ;
+;    |RAW2RGB_J:u4|                                ; 83 (5)              ; 61 (1)                    ; 61440             ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_RTL|RAW2RGB_J:u4                                                                                                                                     ; RAW2RGB_J                 ; work         ;
 ;       |Line_Buffer_J:u0|                         ; 29 (29)             ; 3 (3)                     ; 61440             ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_RTL|RAW2RGB_J:u4|Line_Buffer_J:u0                                                                                                                    ; Line_Buffer_J             ; work         ;
 ;          |int_line:d1|                           ; 0 (0)               ; 0 (0)                     ; 20480             ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_RTL|RAW2RGB_J:u4|Line_Buffer_J:u0|int_line:d1                                                                                                        ; int_line                  ; work         ;
 ;             |altsyncram:altsyncram_component|    ; 0 (0)               ; 0 (0)                     ; 20480             ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_RTL|RAW2RGB_J:u4|Line_Buffer_J:u0|int_line:d1|altsyncram:altsyncram_component                                                                        ; altsyncram                ; work         ;
@@ -487,16 +487,16 @@ agreement for further details.
 ;                |mux_5r7:wrfull_eq_comp_msb_mux|  ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_RTL|Sdram_Control:u7|Sdram_WR_FIFO:u_write1_fifo|dcfifo:dcfifo_component|dcfifo_kkp1:auto_generated|mux_5r7:wrfull_eq_comp_msb_mux                   ; mux_5r7                   ; work         ;
 ;       |command:u_command|                        ; 54 (54)             ; 49 (49)                   ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_RTL|Sdram_Control:u7|command:u_command                                                                                                               ; command                   ; work         ;
 ;       |control_interface:u_control_interface|    ; 73 (73)             ; 55 (55)                   ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_RTL|Sdram_Control:u7|control_interface:u_control_interface                                                                                           ; control_interface         ; work         ;
-;    |VGA_Controller:u1|                           ; 68 (68)             ; 26 (26)                   ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_RTL|VGA_Controller:u1                                                                                                                                ; VGA_Controller            ; work         ;
+;    |VGA_Controller:u1|                           ; 67 (67)             ; 26 (26)                   ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_RTL|VGA_Controller:u1                                                                                                                                ; VGA_Controller            ; work         ;
 ;    |VIDEO_PLL:pll_ref1|                          ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_RTL|VIDEO_PLL:pll_ref1                                                                                                                               ; VIDEO_PLL                 ; work         ;
 ;       |altpll:altpll_component|                  ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_RTL|VIDEO_PLL:pll_ref1|altpll:altpll_component                                                                                                       ; altpll                    ; work         ;
 ;          |VIDEO_PLL_altpll:auto_generated|       ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_RTL|VIDEO_PLL:pll_ref1|altpll:altpll_component|VIDEO_PLL_altpll:auto_generated                                                                       ; VIDEO_PLL_altpll          ; work         ;
-;    |color_choosing:colorChoice|                  ; 3 (3)               ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_RTL|color_choosing:colorChoice                                                                                                                       ; color_choosing            ; work         ;
+;    |color_choosing:colorChoice|                  ; 4 (4)               ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_RTL|color_choosing:colorChoice                                                                                                                       ; color_choosing            ; work         ;
 ;    |hex_display:hex|                             ; 28 (28)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_RTL|hex_display:hex                                                                                                                                  ; hex_display               ; work         ;
 ;    |pll_test:pll_ref|                            ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_RTL|pll_test:pll_ref                                                                                                                                 ; pll_test                  ; work         ;
 ;       |altpll:altpll_component|                  ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_RTL|pll_test:pll_ref|altpll:altpll_component                                                                                                         ; altpll                    ; work         ;
 ;          |pll_test_altpll:auto_generated|        ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_RTL|pll_test:pll_ref|altpll:altpll_component|pll_test_altpll:auto_generated                                                                          ; pll_test_altpll           ; work         ;
-;    |ps2:mouse|                                   ; 196 (196)           ; 139 (139)                 ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_RTL|ps2:mouse                                                                                                                                        ; ps2                       ; work         ;
+;    |ps2:mouse|                                   ; 196 (196)           ; 151 (151)                 ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_RTL|ps2:mouse                                                                                                                                        ; ps2                       ; work         ;
 ;    |sdram_pll:u6|                                ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_RTL|sdram_pll:u6                                                                                                                                     ; sdram_pll                 ; sdram_pll    ;
 ;       |altpll:altpll_component|                  ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_RTL|sdram_pll:u6|altpll:altpll_component                                                                                                             ; altpll                    ; work         ;
 ;          |sdram_pll_altpll:auto_generated|       ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |DE1_SOC_D8M_RTL|sdram_pll:u6|altpll:altpll_component|sdram_pll_altpll:auto_generated                                                                             ; sdram_pll_altpll          ; work         ;
@@ -949,7 +949,6 @@ Encoding Type:  One-Hot
 ; Register name                                                                                                                  ; Reason for Removal                                                                              ;
 +--------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 ; color_choosing:colorChoice|ps[3..31]                                                                                           ; Stuck at GND due to stuck port data_in                                                          ;
-; color_choosing:colorChoice|hold                                                                                                ; Stuck at VCC due to stuck port data_in                                                          ;
 ; ps2:mouse|button_left                                                                                                          ; Lost fanout                                                                                     ;
 ; ps2:mouse|leflatch                                                                                                             ; Lost fanout                                                                                     ;
 ; ps2:mouse|shift_reg[1]                                                                                                         ; Lost fanout                                                                                     ;
@@ -970,10 +969,6 @@ Encoding Type:  One-Hot
 ; FOCUS_ADJ:adl|VCM_I2C:i2c2|I2C_READ_DATA:rd|DATA16[0..13]                                                                      ; Lost fanout                                                                                     ;
 ; MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|I2C_RESET_DELAY:DY|DELAY[0..31]                                         ; Lost fanout                                                                                     ;
 ; MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|I2C_RESET_DELAY:DY|DELAY[0..31]                                        ; Lost fanout                                                                                     ;
-; color_choosing:colorChoice|in                                                                                                  ; Stuck at VCC due to stuck port data_in                                                          ;
-; ps2:mouse|button_right                                                                                                         ; Lost fanout                                                                                     ;
-; ps2:mouse|riglatch                                                                                                             ; Lost fanout                                                                                     ;
-; ps2:mouse|shift_reg[2..11]                                                                                                     ; Lost fanout                                                                                     ;
 ; Sdram_Control:u7|Sdram_RD_FIFO:u_read1_fifo|dcfifo:dcfifo_component|dcfifo_7lp1:auto_generated|dffpipe_pe9:ws_bwp|dffe12a[10]  ; Lost fanout                                                                                     ;
 ; Sdram_Control:u7|Sdram_RD_FIFO:u_read1_fifo|dcfifo:dcfifo_component|dcfifo_7lp1:auto_generated|dffpipe_pe9:ws_brp|dffe12a[10]  ; Lost fanout                                                                                     ;
 ; Sdram_Control:u7|Sdram_WR_FIFO:u_write1_fifo|dcfifo:dcfifo_component|dcfifo_kkp1:auto_generated|dffpipe_pe9:rs_bwp|dffe12a[10] ; Lost fanout                                                                                     ;
@@ -1131,7 +1126,7 @@ Encoding Type:  One-Hot
 ; MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|ST[6]                                                                  ; Stuck at GND due to stuck port data_in                                                          ;
 ; ps2:mouse|cur_state~4                                                                                                          ; Lost fanout                                                                                     ;
 ; ps2:mouse|cur_state~5                                                                                                          ; Lost fanout                                                                                     ;
-; Total Number of Removed Registers = 489                                                                                        ;                                                                                                 ;
+; Total Number of Removed Registers = 475                                                                                        ;                                                                                                 ;
 +--------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------+
 
 
@@ -1185,15 +1180,10 @@ Encoding Type:  One-Hot
 ;                                                                                  ;                           ; MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|I2C_WRITE_WDATA:wrd|DELY[5], ;
 ;                                                                                  ;                           ; MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|I2C_WRITE_WDATA:wrd|DELY[6], ;
 ;                                                                                  ;                           ; MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|I2C_WRITE_WDATA:wrd|DELY[7]  ;
-; ps2:mouse|button_left                                                            ; Lost Fanouts              ; ps2:mouse|leflatch, ps2:mouse|shift_reg[1], ps2:mouse|shift_reg[2],                  ;
-;                                                                                  ;                           ; ps2:mouse|shift_reg[3], ps2:mouse|shift_reg[4], ps2:mouse|shift_reg[5],              ;
-;                                                                                  ;                           ; ps2:mouse|shift_reg[6], ps2:mouse|shift_reg[7], ps2:mouse|shift_reg[8],              ;
-;                                                                                  ;                           ; ps2:mouse|shift_reg[9], ps2:mouse|shift_reg[10], ps2:mouse|shift_reg[11]             ;
-; color_choosing:colorChoice|hold                                                  ; Stuck at VCC              ; color_choosing:colorChoice|in, ps2:mouse|button_right, ps2:mouse|riglatch            ;
-;                                                                                  ; due to stuck port data_in ;                                                                                      ;
 ; MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|REG16_DATA16[11]          ; Stuck at GND              ; MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|WORD_DATA[11],                ;
 ;                                                                                  ; due to stuck port data_in ; MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|ST[7],                        ;
 ;                                                                                  ;                           ; MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_BRIDGE_CONFIG:mpiv|ST[6]                         ;
+; ps2:mouse|button_left                                                            ; Lost Fanouts              ; ps2:mouse|leflatch, ps2:mouse|shift_reg[1]                                           ;
 ; Filter:filter|delay[0][1]                                                        ; Stuck at GND              ; Filter:filter|delay[1][1], Filter:filter|oVGA_SYNC_N                                 ;
 ;                                                                                  ; due to stuck port data_in ;                                                                                      ;
 ; Sdram_Control:u7|rWR1_ADDR[7]                                                    ; Stuck at GND              ; Sdram_Control:u7|mADDR[7],                                                           ;
@@ -1226,12 +1216,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 2169  ;
-; Number of registers using Synchronous Clear  ; 656   ;
+; Total registers                              ; 2183  ;
+; Number of registers using Synchronous Clear  ; 657   ;
 ; Number of registers using Synchronous Load   ; 87    ;
-; Number of registers using Asynchronous Clear ; 1149  ;
+; Number of registers using Asynchronous Clear ; 1150  ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 991   ;
+; Number of registers using Clock Enable       ; 1002  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -1298,34 +1288,34 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                           ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------+
-; 3:1                ; 9 bits    ; 18 LEs        ; 0 LEs                ; 18 LEs                 ; Yes        ; |DE1_SOC_D8M_RTL|ps2:mouse|starttimer[2]                                                             ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |DE1_SOC_D8M_RTL|Sdram_Control:u7|command:u_command|BA[0]                                            ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |DE1_SOC_D8M_RTL|Filter:filter|delay[1][5]                                                           ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |DE1_SOC_D8M_RTL|Filter:filter|delay[1][18]                                                          ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |DE1_SOC_D8M_RTL|Filter:filter|delay[1][24]                                                          ;
-; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |DE1_SOC_D8M_RTL|Sdram_Control:u7|control_interface:u_control_interface|timer[11]                    ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |DE1_SOC_D8M_RTL|Sdram_Control:u7|command:u_command|command_delay[3]                                 ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |DE1_SOC_D8M_RTL|FOCUS_ADJ:adl|LCD_COUNTER:cv1|H_CNT[8]                                              ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |DE1_SOC_D8M_RTL|FOCUS_ADJ:adl|LCD_COUNTER:cv1|V_CNT[13]                                             ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |DE1_SOC_D8M_RTL|FOCUS_ADJ:adl|VCM_CTRL_P:pp|rSUM[17]                                                ;
-; 3:1                ; 15 bits   ; 30 LEs        ; 0 LEs                ; 30 LEs                 ; Yes        ; |DE1_SOC_D8M_RTL|Sdram_Control:u7|mADDR[8]                                                           ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |DE1_SOC_D8M_RTL|ps2:mouse|oY_BIN[4]                                                                 ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |DE1_SOC_D8M_RTL|ps2:mouse|oX_BIN[1]                                                                 ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |DE1_SOC_D8M_RTL|FOCUS_ADJ:adl|AUTO_SYNC_MODIFY:RE|MODIFY_SYNC:vs|CNT[0]                             ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |DE1_SOC_D8M_RTL|FOCUS_ADJ:adl|AUTO_SYNC_MODIFY:RE|MODIFY_SYNC:hs|CNT[7]                             ;
-; 4:1                ; 11 bits   ; 22 LEs        ; 11 LEs               ; 11 LEs                 ; Yes        ; |DE1_SOC_D8M_RTL|Sdram_Control:u7|command:u_command|SA[7]                                            ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |DE1_SOC_D8M_RTL|Sdram_Control:u7|command:u_command|rp_shift[0]                                      ;
-; 4:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |DE1_SOC_D8M_RTL|FOCUS_ADJ:adl|VCM_CTRL_P:pp|peakSUM[21]                                             ;
-; 4:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; Yes        ; |DE1_SOC_D8M_RTL|ps2:mouse|y_latch[2]                                                                ;
+; 3:1                ; 9 bits    ; 18 LEs        ; 0 LEs                ; 18 LEs                 ; Yes        ; |DE1_SOC_D8M_RTL|ps2:mouse|starttimer[5]                                                             ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |DE1_SOC_D8M_RTL|Sdram_Control:u7|command:u_command|BA[1]                                            ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |DE1_SOC_D8M_RTL|Filter:filter|delay[1][9]                                                           ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |DE1_SOC_D8M_RTL|Filter:filter|delay[1][13]                                                          ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |DE1_SOC_D8M_RTL|Filter:filter|delay[1][23]                                                          ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 15 LEs               ; 15 LEs                 ; Yes        ; |DE1_SOC_D8M_RTL|Sdram_Control:u7|control_interface:u_control_interface|timer[15]                    ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |DE1_SOC_D8M_RTL|Sdram_Control:u7|command:u_command|command_done                                     ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |DE1_SOC_D8M_RTL|FOCUS_ADJ:adl|LCD_COUNTER:cv1|H_CNT[6]                                              ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |DE1_SOC_D8M_RTL|FOCUS_ADJ:adl|LCD_COUNTER:cv1|V_CNT[12]                                             ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |DE1_SOC_D8M_RTL|FOCUS_ADJ:adl|VCM_CTRL_P:pp|rSUM[29]                                                ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 0 LEs                ; 30 LEs                 ; Yes        ; |DE1_SOC_D8M_RTL|Sdram_Control:u7|mADDR[19]                                                          ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |DE1_SOC_D8M_RTL|ps2:mouse|oY_BIN[1]                                                                 ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |DE1_SOC_D8M_RTL|ps2:mouse|oX_BIN[9]                                                                 ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |DE1_SOC_D8M_RTL|FOCUS_ADJ:adl|AUTO_SYNC_MODIFY:RE|MODIFY_SYNC:vs|CNT[4]                             ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |DE1_SOC_D8M_RTL|FOCUS_ADJ:adl|AUTO_SYNC_MODIFY:RE|MODIFY_SYNC:hs|CNT[6]                             ;
+; 4:1                ; 11 bits   ; 22 LEs        ; 11 LEs               ; 11 LEs                 ; Yes        ; |DE1_SOC_D8M_RTL|Sdram_Control:u7|command:u_command|SA[0]                                            ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |DE1_SOC_D8M_RTL|Sdram_Control:u7|command:u_command|rp_shift[2]                                      ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |DE1_SOC_D8M_RTL|FOCUS_ADJ:adl|VCM_CTRL_P:pp|peakSUM[9]                                              ;
+; 4:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; Yes        ; |DE1_SOC_D8M_RTL|ps2:mouse|y_latch[8]                                                                ;
 ; 4:1                ; 9 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; Yes        ; |DE1_SOC_D8M_RTL|ps2:mouse|x_latch[3]                                                                ;
-; 5:1                ; 16 bits   ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; Yes        ; |DE1_SOC_D8M_RTL|RAW2RGB_J:u4|RAW_RGB_BIN:bin|R[4]                                                   ;
+; 5:1                ; 16 bits   ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; Yes        ; |DE1_SOC_D8M_RTL|RAW2RGB_J:u4|RAW_RGB_BIN:bin|R[3]                                                   ;
 ; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |DE1_SOC_D8M_RTL|Sdram_Control:u7|mRD                                                                ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |DE1_SOC_D8M_RTL|Sdram_Control:u7|mWR                                                                ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; Yes        ; |DE1_SOC_D8M_RTL|Sdram_Control:u7|WR_MASK[0]                                                         ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |DE1_SOC_D8M_RTL|Sdram_Control:u7|CMD[0]                                                             ;
 ; 128:1              ; 8 bits    ; 680 LEs       ; 0 LEs                ; 680 LEs                ; Yes        ; |DE1_SOC_D8M_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|CNT[7]                      ;
 ; 65:1               ; 8 bits    ; 344 LEs       ; 0 LEs                ; 344 LEs                ; Yes        ; |DE1_SOC_D8M_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|I2C_WRITE_PTR:wpt|DELY[7]   ;
-; 128:1              ; 8 bits    ; 680 LEs       ; 0 LEs                ; 680 LEs                ; Yes        ; |DE1_SOC_D8M_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|I2C_READ_DATA:rd|CNT[5]     ;
-; 65:1               ; 8 bits    ; 344 LEs       ; 0 LEs                ; 344 LEs                ; Yes        ; |DE1_SOC_D8M_RTL|FOCUS_ADJ:adl|VCM_I2C:i2c2|I2C_WRITE_PTR:wpt|DELY[2]                                ;
+; 128:1              ; 8 bits    ; 680 LEs       ; 0 LEs                ; 680 LEs                ; Yes        ; |DE1_SOC_D8M_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|I2C_READ_DATA:rd|CNT[3]     ;
+; 65:1               ; 8 bits    ; 344 LEs       ; 0 LEs                ; 344 LEs                ; Yes        ; |DE1_SOC_D8M_RTL|FOCUS_ADJ:adl|VCM_I2C:i2c2|I2C_WRITE_PTR:wpt|DELY[6]                                ;
 ; 128:1              ; 8 bits    ; 680 LEs       ; 0 LEs                ; 680 LEs                ; Yes        ; |DE1_SOC_D8M_RTL|FOCUS_ADJ:adl|VCM_I2C:i2c2|I2C_READ_DATA:rd|CNT[2]                                  ;
 ; 65:1               ; 8 bits    ; 344 LEs       ; 0 LEs                ; 344 LEs                ; Yes        ; |DE1_SOC_D8M_RTL|MIPI_BRIDGE_CAMERA_Config:cfin|MIPI_CAMERA_CONFIG:camiv|I2C_WRITE_PTR:wpt|CNT[4]    ;
 ; 65:1               ; 8 bits    ; 344 LEs       ; 0 LEs                ; 344 LEs                ; Yes        ; |DE1_SOC_D8M_RTL|FOCUS_ADJ:adl|VCM_I2C:i2c2|I2C_WRITE_PTR:wpt|CNT[2]                                 ;
@@ -4039,23 +4029,23 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 2169                        ;
+; arriav_ff             ; 2183                        ;
 ;     CLR               ; 638                         ;
 ;     CLR SCLR          ; 54                          ;
 ;     CLR SLD           ; 44                          ;
-;     ENA               ; 282                         ;
-;     ENA CLR           ; 191                         ;
+;     ENA               ; 292                         ;
+;     ENA CLR           ; 192                         ;
 ;     ENA CLR SCLR      ; 207                         ;
 ;     ENA CLR SLD       ; 15                          ;
 ;     ENA SCLR          ; 282                         ;
 ;     ENA SCLR SLD      ; 3                           ;
 ;     ENA SLD           ; 11                          ;
-;     SCLR              ; 109                         ;
+;     SCLR              ; 110                         ;
 ;     SCLR SLD          ; 1                           ;
 ;     SLD               ; 13                          ;
-;     plain             ; 319                         ;
+;     plain             ; 321                         ;
 ; arriav_io_obuf        ; 63                          ;
-; arriav_lcell_comb     ; 3228                        ;
+; arriav_lcell_comb     ; 3229                        ;
 ;     arith             ; 890                         ;
 ;         0 data inputs ; 13                          ;
 ;         1 data inputs ; 808                         ;
@@ -4063,14 +4053,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;         5 data inputs ; 28                          ;
 ;     extend            ; 32                          ;
 ;         7 data inputs ; 32                          ;
-;     normal            ; 2230                        ;
+;     normal            ; 2231                        ;
 ;         0 data inputs ; 5                           ;
 ;         1 data inputs ; 33                          ;
-;         2 data inputs ; 304                         ;
-;         3 data inputs ; 243                         ;
-;         4 data inputs ; 416                         ;
-;         5 data inputs ; 452                         ;
-;         6 data inputs ; 777                         ;
+;         2 data inputs ; 303                         ;
+;         3 data inputs ; 242                         ;
+;         4 data inputs ; 418                         ;
+;         5 data inputs ; 455                         ;
+;         6 data inputs ; 775                         ;
 ;     shared            ; 76                          ;
 ;         2 data inputs ; 76                          ;
 ; arriav_mac            ; 2                           ;
@@ -4088,7 +4078,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:31     ;
+; Top            ; 00:00:32     ;
 +----------------+--------------+
 
 
@@ -4098,7 +4088,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.0.0 Build 595 04/25/2017 SJ Lite Edition
-    Info: Processing started: Tue May 28 12:09:30 2019
+    Info: Processing started: Tue May 28 22:49:37 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE1_SOC_D8M_RTL -c DE1_SOC_D8M_RTL
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -4200,7 +4190,7 @@ Info (12021): Found 2 design units, including 2 entities, in source file inputff
     Info (12023): Found entity 1: inputff File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/inputff.sv Line: 3
     Info (12023): Found entity 2: inputff_testbench File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/inputff.sv Line: 30
 Info (12021): Found 1 design units, including 1 entities, in source file paint_ram.sv
-    Info (12023): Found entity 1: paint_RAM File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/paint_RAM.sv Line: 1
+    Info (12023): Found entity 1: paint_RAM File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/paint_RAM.sv Line: 18
 Info (12021): Found 1 design units, including 1 entities, in source file hex_display.sv
     Info (12023): Found entity 1: hex_display File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/hex_display.sv Line: 1
 Warning (10236): Verilog HDL Implicit Net warning at DE1_SOC_D8M_RTL.v(141): created implicit net for "KEDR" File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/DE1_SOC_D8M_RTL.v Line: 141
@@ -4738,9 +4728,9 @@ Warning (10230): Verilog HDL assignment warning at ps2.v(278): truncated value w
 Warning (10230): Verilog HDL assignment warning at ps2.v(294): truncated value with size 32 to match size of target (4) File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/ps2.v Line: 294
 Info (12128): Elaborating entity "inputff" for hierarchy "inputff:freeze_frame" File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/DE1_SOC_D8M_RTL.v Line: 418
 Info (12128): Elaborating entity "paint_RAM" for hierarchy "paint_RAM:paint" File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/DE1_SOC_D8M_RTL.v Line: 426
-Warning (10230): Verilog HDL assignment warning at paint_RAM.sv(13): truncated value with size 32 to match size of target (20) File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/paint_RAM.sv Line: 13
-Warning (10230): Verilog HDL assignment warning at paint_RAM.sv(24): truncated value with size 7 to match size of target (3) File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/paint_RAM.sv Line: 24
-Warning (10230): Verilog HDL assignment warning at paint_RAM.sv(28): truncated value with size 3 to match size of target (1) File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/paint_RAM.sv Line: 28
+Warning (10230): Verilog HDL assignment warning at paint_RAM.sv(31): truncated value with size 32 to match size of target (20) File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/paint_RAM.sv Line: 31
+Warning (10230): Verilog HDL assignment warning at paint_RAM.sv(44): truncated value with size 7 to match size of target (3) File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/paint_RAM.sv Line: 44
+Warning (10230): Verilog HDL assignment warning at paint_RAM.sv(48): truncated value with size 3 to match size of target (1) File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/paint_RAM.sv Line: 48
 Info (12128): Elaborating entity "color_choosing" for hierarchy "color_choosing:colorChoice" File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/DE1_SOC_D8M_RTL.v Line: 429
 Info (12128): Elaborating entity "hex_display" for hierarchy "hex_display:hex" File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/DE1_SOC_D8M_RTL.v Line: 432
 Warning (14284): Synthesized away the following node(s):
@@ -4843,7 +4833,7 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "MIPI_CS_n" is stuck at GND File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/DE1_SOC_D8M_RTL.v Line: 98
     Warning (13410): Pin "MIPI_MCLK" is stuck at GND File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/DE1_SOC_D8M_RTL.v Line: 101
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 185 registers lost all their fanouts during netlist optimizations.
+Info (17049): 173 registers lost all their fanouts during netlist optimizations.
 Info (17036): Removed 1 MSB VCC or GND address nodes from RAM block "RAW2RGB_J:u4|Line_Buffer_J:u0|int_line:d3|altsyncram:altsyncram_component|altsyncram_6lq1:auto_generated|ALTSYNCRAM" File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/db/altsyncram_6lq1.tdf Line: 35
 Info (17036): Removed 1 MSB VCC or GND address nodes from RAM block "RAW2RGB_J:u4|Line_Buffer_J:u0|int_line:d2|altsyncram:altsyncram_component|altsyncram_6lq1:auto_generated|ALTSYNCRAM" File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/db/altsyncram_6lq1.tdf Line: 35
 Info (17036): Removed 1 MSB VCC or GND address nodes from RAM block "RAW2RGB_J:u4|Line_Buffer_J:u0|int_line:d1|altsyncram:altsyncram_component|altsyncram_6lq1:auto_generated|ALTSYNCRAM" File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/db/altsyncram_6lq1.tdf Line: 35
@@ -4889,19 +4879,19 @@ Warning (21074): Design contains 22 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "TD_DATA[7]" File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/DE1_SOC_D8M_RTL.v Line: 79
     Warning (15610): No output dependent on input pin "TD_HS" File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/DE1_SOC_D8M_RTL.v Line: 80
     Warning (15610): No output dependent on input pin "TD_VS" File: C:/Users/Laptop/Desktop/EE 371/lab 6/Camera Reduced/DE1_SOC_D8M_RTL.v Line: 82
-Info (21057): Implemented 4411 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 4425 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 45 input pins
     Info (21059): Implemented 118 output pins
     Info (21060): Implemented 63 bidirectional pins
-    Info (21061): Implemented 4123 logic cells
+    Info (21061): Implemented 4137 logic cells
     Info (21064): Implemented 56 RAM segments
     Info (21065): Implemented 4 PLLs
     Info (21062): Implemented 2 DSP elements
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 261 warnings
-    Info: Peak virtual memory: 4952 megabytes
-    Info: Processing ended: Tue May 28 12:10:59 2019
-    Info: Elapsed time: 00:01:29
-    Info: Total CPU time (on all processors): 00:01:21
+    Info: Peak virtual memory: 4949 megabytes
+    Info: Processing ended: Tue May 28 22:50:32 2019
+    Info: Elapsed time: 00:00:55
+    Info: Total CPU time (on all processors): 00:01:17
 
 
 +------------------------------------------+

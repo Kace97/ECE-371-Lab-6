@@ -5,8 +5,8 @@ module color_choosing (clk, reset, button_right, color);
  //seperate the right clicks of the machine
  logic in, hold;
  always_ff @(posedge clk) begin
-	if (button_right) hold <= 1'b1;
-	else if (~button_right & hold) in <= 1'b1;
+	hold <= button_right;//hold always holds the previous value of button right
+	if (~button_right & hold) in <= 1'b1;
 	else in <= 1'b0;
 	end//ff
  
