@@ -398,8 +398,8 @@ CLOCKMEM  ck3 ( .CLK(MIPI_PIXEL_CLK_)   ,.CLK_FREQ  (25000000  ) , . CK_1HZ (D8M
 wire button_left, button_right, button_middle;
 wire [9:0] bin_x, bin_y;
 //add the mouse to be displayed on the monitor
-ps2 mouse(.start(~KEY[2]),         // transmit instrucions to device
-		.reset(~KEY[1]),         // FSM reset signal
+ps2 mouse(.start(1'b1),         // transmit instrucions to device
+		.reset(~KEY[2]),         // FSM reset signal
 		.CLOCK_50(CLOCK_50),      //clock source
 		.PS2_CLK(PS2_CLK),       //ps2_clock signal inout
 		.PS2_DAT(PS2_DAT),       //ps2_data  signal inout
@@ -424,7 +424,8 @@ assign color_rd_addr = VGA_H_CNT + VGA_V_CNT * 640;
 assign color_wr_addr = bin_x + bin_y * 640;
 //paint over camera
 paint_RAM paint (.clk(CLOCK_50), .reset(~KEY[2]), .wr_addr(color_wr_addr), .wren(button_left), .rd_addr(color_rd_addr), .wr_data(color_wr_ata), .rd_data(color_rd_data));
-
+assign LEDR[0] = button_right;
+assign LEDR[1] = button_left;
 //choose color for paint
 color_choosing colorChoice (.clk(CLOCK_50), .reset(~KEY[2]), .button_right(button_right), .color(color_wr_data));
 

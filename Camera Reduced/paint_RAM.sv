@@ -18,7 +18,7 @@ change a 3 bit color code to the 3 byte color that is meant to be represented by
 module paint_RAM #(parameter N = 10) (clk, reset, wr_addr, wren, rd_addr, wr_data, rd_data);
  input logic clk, reset, wren;
  input logic [N-1:0] wr_addr, rd_addr;
- input logic [6:0] wr_data;
+ input logic [2:0] wr_data;
  output logic [23:0] rd_data;
  
  logic [2:0] RAM [0:640*480];
@@ -33,7 +33,6 @@ module paint_RAM #(parameter N = 10) (clk, reset, wr_addr, wren, rd_addr, wr_dat
    count <= 0;
  end
  
- integer i;//is this integer ever used?
  //reset the values corresponding to count to 0
  //if wren write the selected data into the corresponding address in the RAM
  always_ff @(posedge clk) begin
@@ -41,7 +40,7 @@ module paint_RAM #(parameter N = 10) (clk, reset, wr_addr, wren, rd_addr, wr_dat
 	RAM[count] <= 0;
   end //if
   else if (wren) begin
-   RAM[wr_addr] <= wr_data;//WR_data is 7 bits should it be 3?
+   RAM[wr_addr] <= wr_data;
   end //else if
  end // always
  

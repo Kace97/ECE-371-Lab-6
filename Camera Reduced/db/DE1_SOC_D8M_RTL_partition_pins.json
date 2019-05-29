@@ -244,6 +244,14 @@
 					"strict" : false
 				},
 				{
+					"name" : "LEDR[0]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[1]",
+					"strict" : false
+				},
+				{
 					"name" : "VGA_BLANK_N",
 					"strict" : false
 				},
@@ -513,10 +521,6 @@
 				},
 				{
 					"name" : "MIPI_PIXEL_D[9]",
-					"strict" : false
-				},
-				{
-					"name" : "KEY[1]",
 					"strict" : false
 				},
 				{
