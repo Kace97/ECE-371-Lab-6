@@ -17,11 +17,11 @@ change a 3 bit color code to the 3 byte color that is meant to be represented by
 */
 module paint_RAM (clk, reset, wr_addr, wren, rd_addr, wr_data, rd_data);
  input logic clk, reset, wren;
- input logic [9:0] wr_addr, rd_addr;
+ input logic [14:0] wr_addr, rd_addr;
  input logic [2:0] wr_data;
  output logic [23:0] rd_data;
  
- logic [2:0] RAM [0:640*480>>>2];
+ logic [2:0] RAM [0:160*120];
  logic rd_color;
  logic [19:0] count;
  

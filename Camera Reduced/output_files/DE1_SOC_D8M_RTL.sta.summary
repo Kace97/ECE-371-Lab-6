@@ -2,12 +2,12 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1100mV 85C Model Setup 'u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
-Slack : 2.852
+Type  : Slow 1100mV 85C Model Setup 'pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
+Slack : 2.367
 TNS   : 0.000
 
-Type  : Slow 1100mV 85C Model Setup 'pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
-Slack : 3.036
+Type  : Slow 1100mV 85C Model Setup 'u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
+Slack : 3.001
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Setup 'altera_reserved_tck'
@@ -15,79 +15,79 @@ Slack : 10.300
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Setup 'MIPI_PIXEL_CLK'
-Slack : 11.588
-TNS   : 0.000
-
-Type  : Slow 1100mV 85C Model Setup 'CLOCK2_50'
-Slack : 13.448
+Slack : 11.028
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Setup 'CLOCK_50'
-Slack : 13.584
+Slack : 11.631
 TNS   : 0.000
 
-Type  : Slow 1100mV 85C Model Hold 'u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
-Slack : 0.283
-TNS   : 0.000
-
-Type  : Slow 1100mV 85C Model Hold 'pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
-Slack : 0.293
-TNS   : 0.000
-
-Type  : Slow 1100mV 85C Model Hold 'CLOCK_50'
-Slack : 0.353
+Type  : Slow 1100mV 85C Model Setup 'CLOCK2_50'
+Slack : 12.473
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Hold 'CLOCK2_50'
-Slack : 0.364
+Slack : 0.220
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.298
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.304
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'CLOCK_50'
+Slack : 0.357
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Hold 'altera_reserved_tck'
-Slack : 0.438
+Slack : 0.519
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Hold 'MIPI_PIXEL_CLK'
-Slack : 0.440
+Slack : 0.566
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Recovery 'u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
-Slack : -0.455
-TNS   : -17.045
-
-Type  : Slow 1100mV 85C Model Recovery 'pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
-Slack : 13.798
+Slack : 0.238
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Recovery 'MIPI_PIXEL_CLK'
-Slack : 13.970
+Slack : 13.949
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Recovery 'pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
+Slack : 14.371
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Recovery 'CLOCK2_50'
-Slack : 16.265
+Slack : 16.138
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Recovery 'altera_reserved_tck'
-Slack : 35.464
-TNS   : 0.000
-
-Type  : Slow 1100mV 85C Model Removal 'MIPI_PIXEL_CLK'
-Slack : 0.575
-TNS   : 0.000
-
-Type  : Slow 1100mV 85C Model Removal 'altera_reserved_tck'
-Slack : 0.747
+Slack : 36.041
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Removal 'CLOCK2_50'
-Slack : 0.792
-TNS   : 0.000
-
-Type  : Slow 1100mV 85C Model Removal 'pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
-Slack : 0.957
+Slack : 0.709
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Removal 'u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
-Slack : 1.001
+Slack : 0.741
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Removal 'altera_reserved_tck'
+Slack : 0.968
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Removal 'pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
+Slack : 1.019
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Removal 'MIPI_PIXEL_CLK'
+Slack : 1.141
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'pll_ref1|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]'
@@ -103,39 +103,39 @@ Slack : 1.666
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
-Slack : 3.779
+Slack : 3.783
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'CLOCK2_50'
-Slack : 8.802
+Slack : 8.789
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
-Slack : 8.884
+Slack : 8.868
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'CLOCK3_50'
 Slack : 9.670
 TNS   : 0.000
 
-Type  : Slow 1100mV 85C Model Minimum Pulse Width 'MIPI_PIXEL_CLK'
-Slack : 18.262
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'altera_reserved_tck'
+Slack : 18.446
 TNS   : 0.000
 
-Type  : Slow 1100mV 85C Model Minimum Pulse Width 'altera_reserved_tck'
-Slack : 18.466
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'MIPI_PIXEL_CLK'
+Slack : 18.472
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
-Slack : 18.783
+Slack : 18.780
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Setup 'pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
-Slack : 2.906
+Slack : 2.195
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Setup 'u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
-Slack : 2.929
+Slack : 3.149
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Setup 'altera_reserved_tck'
@@ -143,79 +143,79 @@ Slack : 10.440
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Setup 'MIPI_PIXEL_CLK'
-Slack : 11.593
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Setup 'CLOCK2_50'
-Slack : 13.407
+Slack : 11.052
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Setup 'CLOCK_50'
-Slack : 13.642
+Slack : 11.921
 TNS   : 0.000
 
-Type  : Slow 1100mV 0C Model Hold 'CLOCK_50'
-Slack : 0.223
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Hold 'u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
-Slack : 0.264
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Hold 'pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
-Slack : 0.279
+Type  : Slow 1100mV 0C Model Setup 'CLOCK2_50'
+Slack : 12.523
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Hold 'CLOCK2_50'
-Slack : 0.365
+Slack : 0.212
 TNS   : 0.000
 
-Type  : Slow 1100mV 0C Model Hold 'MIPI_PIXEL_CLK'
-Slack : 0.437
+Type  : Slow 1100mV 0C Model Hold 'pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.277
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.286
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'CLOCK_50'
+Slack : 0.349
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Hold 'altera_reserved_tck'
-Slack : 0.453
+Slack : 0.534
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'MIPI_PIXEL_CLK'
+Slack : 0.538
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Recovery 'u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
-Slack : -0.163
-TNS   : -2.654
+Slack : 0.508
+TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Recovery 'MIPI_PIXEL_CLK'
-Slack : 13.869
+Slack : 13.886
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Recovery 'pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
-Slack : 13.921
+Slack : 14.469
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Recovery 'CLOCK2_50'
-Slack : 16.432
+Slack : 16.300
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Recovery 'altera_reserved_tck'
-Slack : 35.611
+Slack : 36.179
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Removal 'CLOCK2_50'
-Slack : 0.653
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Removal 'altera_reserved_tck'
-Slack : 0.704
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Removal 'MIPI_PIXEL_CLK'
-Slack : 0.741
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Removal 'pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
-Slack : 0.899
+Slack : 0.612
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Removal 'u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
-Slack : 1.026
+Slack : 0.761
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Removal 'altera_reserved_tck'
+Slack : 0.907
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Removal 'pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.952
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Removal 'MIPI_PIXEL_CLK'
+Slack : 1.291
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'pll_ref1|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]'
@@ -231,39 +231,39 @@ Slack : 1.666
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
-Slack : 3.765
+Slack : 3.756
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'CLOCK2_50'
-Slack : 8.799
+Slack : 8.795
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
-Slack : 8.908
+Slack : 8.841
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'CLOCK3_50'
 Slack : 9.673
 TNS   : 0.000
 
-Type  : Slow 1100mV 0C Model Minimum Pulse Width 'MIPI_PIXEL_CLK'
-Slack : 18.241
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'altera_reserved_tck'
+Slack : 18.430
 TNS   : 0.000
 
-Type  : Slow 1100mV 0C Model Minimum Pulse Width 'altera_reserved_tck'
-Slack : 18.471
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'MIPI_PIXEL_CLK'
+Slack : 18.462
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
-Slack : 18.755
+Slack : 18.754
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Setup 'u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
-Slack : 5.822
+Slack : 5.810
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Setup 'pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
-Slack : 10.509
+Slack : 9.724
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Setup 'altera_reserved_tck'
@@ -271,79 +271,79 @@ Slack : 12.357
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Setup 'MIPI_PIXEL_CLK'
-Slack : 13.841
+Slack : 13.500
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Setup 'CLOCK_50'
-Slack : 15.824
+Slack : 14.658
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Setup 'CLOCK2_50'
-Slack : 15.951
+Slack : 15.242
 TNS   : 0.000
 
-Type  : Fast 1100mV 85C Model Hold 'altera_reserved_tck'
-Slack : 0.139
-TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Hold 'u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
-Slack : 0.162
+Type  : Fast 1100mV 85C Model Hold 'CLOCK2_50'
+Slack : 0.130
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Hold 'pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
-Slack : 0.169
+Slack : 0.173
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Hold 'CLOCK_50'
 Slack : 0.177
 TNS   : 0.000
 
-Type  : Fast 1100mV 85C Model Hold 'CLOCK2_50'
-Slack : 0.197
+Type  : Fast 1100mV 85C Model Hold 'u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.180
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'altera_reserved_tck'
+Slack : 0.184
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Hold 'MIPI_PIXEL_CLK'
-Slack : 0.223
+Slack : 0.270
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Recovery 'u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
-Slack : 3.027
+Slack : 3.561
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Recovery 'MIPI_PIXEL_CLK'
-Slack : 15.420
+Slack : 15.481
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Recovery 'pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
-Slack : 16.147
+Slack : 16.540
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Recovery 'CLOCK2_50'
-Slack : 17.496
+Slack : 17.438
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Recovery 'altera_reserved_tck'
-Slack : 36.760
+Slack : 37.181
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Removal 'CLOCK2_50'
-Slack : 0.350
-TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Removal 'altera_reserved_tck'
-Slack : 0.393
-TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Removal 'pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
-Slack : 0.546
+Slack : 0.264
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Removal 'u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
-Slack : 0.547
+Slack : 0.437
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Removal 'altera_reserved_tck'
+Slack : 0.479
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Removal 'pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.624
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Removal 'MIPI_PIXEL_CLK'
-Slack : 0.599
+Slack : 0.890
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'pll_ref1|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]'
@@ -359,15 +359,15 @@ Slack : 1.666
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
-Slack : 3.892
+Slack : 3.888
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
-Slack : 8.482
+Slack : 8.474
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'CLOCK2_50'
-Slack : 8.750
+Slack : 8.742
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'CLOCK3_50'
@@ -375,23 +375,23 @@ Slack : 9.336
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'MIPI_PIXEL_CLK'
-Slack : 17.731
+Slack : 17.907
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'altera_reserved_tck'
-Slack : 18.139
+Slack : 18.132
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
-Slack : 18.892
+Slack : 18.891
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Setup 'u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
-Slack : 6.062
+Slack : 6.074
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Setup 'pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
-Slack : 11.105
+Slack : 10.341
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Setup 'altera_reserved_tck'
@@ -399,79 +399,79 @@ Slack : 12.535
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Setup 'MIPI_PIXEL_CLK'
-Slack : 14.512
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Setup 'CLOCK2_50'
-Slack : 16.180
+Slack : 14.166
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Setup 'CLOCK_50'
-Slack : 16.260
+Slack : 15.241
 TNS   : 0.000
 
-Type  : Fast 1100mV 0C Model Hold 'CLOCK_50'
-Slack : 0.078
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Hold 'altera_reserved_tck'
-Slack : 0.132
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Hold 'u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
-Slack : 0.149
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Hold 'pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
-Slack : 0.154
+Type  : Fast 1100mV 0C Model Setup 'CLOCK2_50'
+Slack : 15.579
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Hold 'CLOCK2_50'
-Slack : 0.186
+Slack : 0.119
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.159
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
+Slack : 0.163
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'altera_reserved_tck'
+Slack : 0.167
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'CLOCK_50'
+Slack : 0.168
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Hold 'MIPI_PIXEL_CLK'
-Slack : 0.198
+Slack : 0.246
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Recovery 'u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
-Slack : 3.694
+Slack : 4.155
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Recovery 'MIPI_PIXEL_CLK'
-Slack : 15.802
+Slack : 15.843
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Recovery 'pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
-Slack : 16.382
+Slack : 16.723
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Recovery 'CLOCK2_50'
-Slack : 17.812
+Slack : 17.761
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Recovery 'altera_reserved_tck'
-Slack : 37.098
+Slack : 37.485
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Removal 'CLOCK2_50'
-Slack : 0.191
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Removal 'altera_reserved_tck'
-Slack : 0.356
+Slack : 0.120
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Removal 'u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
-Slack : 0.466
+Slack : 0.356
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Removal 'altera_reserved_tck'
+Slack : 0.421
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Removal 'pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
-Slack : 0.497
+Slack : 0.551
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Removal 'MIPI_PIXEL_CLK'
-Slack : 0.599
+Slack : 0.854
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'pll_ref1|altpll_component|auto_generated|generic_pll1~FRACTIONAL_PLL|vcoph[0]'
@@ -487,15 +487,15 @@ Slack : 1.666
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'u6|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'
-Slack : 3.893
+Slack : 3.890
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
-Slack : 8.438
+Slack : 8.430
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'CLOCK2_50'
-Slack : 8.727
+Slack : 8.729
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'CLOCK3_50'
@@ -503,11 +503,11 @@ Slack : 9.286
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'MIPI_PIXEL_CLK'
-Slack : 17.760
+Slack : 17.890
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'altera_reserved_tck'
-Slack : 18.131
+Slack : 18.114
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'pll_ref1|altpll_component|auto_generated|generic_pll1~PLL_OUTPUT_COUNTER|divclk'

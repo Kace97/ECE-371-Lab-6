@@ -237,7 +237,7 @@ begin
 		if($signed(x_latch) >= THRESHOLD)
 		begin
 			x_latch <= x_latch - BIN;
-			if(oX_BIN != HEIGHT-1)
+			if(oX_BIN != WIDTH-1)
 			begin
 				oX_BIN <= oX_BIN + 1'b1;
 			end
@@ -253,18 +253,18 @@ begin
 		
 		if($signed(y_latch) >= THRESHOLD)
 		begin
-			y_latch <= y_latch - BIN;
+			y_latch <= y_latch + BIN;
 			if(oY_BIN != HEIGHT-1)
 			begin
-				oY_BIN <= oY_BIN - 1'b1;
+				oY_BIN <= oY_BIN + 1'b1;
 			end
 		end
 		else if($signed(y_latch) <= -THRESHOLD)
 		begin
-			y_latch <= y_latch + BIN;
+			y_latch <= y_latch - BIN;
 			if(oY_BIN != 0)
 			begin
-				oY_BIN <= oY_BIN + 1'b1;
+				oY_BIN <= oY_BIN - 1'b1;
 			end
 		end
 		

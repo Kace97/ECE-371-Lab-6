@@ -367,7 +367,6 @@ set_global_assignment -name QIP_FILE V/VIDEO_PLL.qip
 set_global_assignment -name SYSTEMVERILOG_FILE Filter.sv
 set_global_assignment -name VERILOG_FILE ps2.v
 set_global_assignment -name SYSTEMVERILOG_FILE inputff.sv
-set_global_assignment -name SYSTEMVERILOG_FILE paint_RAM.sv
 set_global_assignment -name SYSTEMVERILOG_FILE hex_display.sv
 set_global_assignment -name SYSTEMVERILOG_FILE inpuT.sv
 set_global_assignment -name ENABLE_SIGNALTAP ON
@@ -807,9 +806,6 @@ set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_TRIGGER_LEVEL_PIP
 set_global_assignment -name SLD_NODE_PARAMETER_ASSIGNMENT "SLD_ENABLE_ADVANCED_TRIGGER=0" -section_id auto_signaltap_0
 set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (SystemVerilog)"
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "SYSTEMVERILOG HDL" -section_id eda_simulation
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ADC_CONVST
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ADC_DIN
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ADC_DOUT
@@ -1036,5 +1032,10 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MIPI_PIXEL_HS
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MIPI_PIXEL_VS
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MIPI_REFCLK
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MIPI_RESET_n
+set_global_assignment -name QIP_FILE paintRAM.qip
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name SYSTEMVERILOG_FILE paint_reset.sv
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name SLD_FILE db/stp1_auto_stripped.stp

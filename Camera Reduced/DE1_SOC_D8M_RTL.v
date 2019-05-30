@@ -309,7 +309,7 @@ RAW2RGB_J				u4	(
                      .VGA_VS       ( pre_VGA_VS ),	
 							.VGA_HS       ( pre_VGA_HS ), 
 							.mouse_overwrite(mouse_overwrite),
-							.color_ram_data (color_rd_data),
+							.color_ram_data (rd_data),
 	                  			
 							.oRed         ( RED  ),
 							.oGreen       ( GREEN),
@@ -398,7 +398,7 @@ CLOCKMEM  ck3 ( .CLK(MIPI_PIXEL_CLK_)   ,.CLK_FREQ  (25000000  ) , . CK_1HZ (D8M
 wire button_left, button_right, button_middle;
 wire [9:0] bin_x, bin_y;
 //add the mouse to be displayed on the monitor
-ps2 mouse(.start(1'b0),         // transmit instrucions to device
+ps2 mouse(.start(~KEY[0]),         // transmit instrucions to device
 		.reset(~KEY[2]),         // FSM reset signal
 		.CLOCK_50(CLOCK_50),      //clock source
 		.PS2_CLK(PS2_CLK),       //ps2_clock signal inout
@@ -408,22 +408,52 @@ ps2 mouse(.start(1'b0),         // transmit instrucions to device
 		.button_middle(button_middle), //middle button press display
 		.bin_x(bin_x),         //binned X position with hysteresis
 		.bin_y(bin_y)        );
-		
-//ps2_mouse mouse (.clk(CLOCK_50), .reset(~KEY[2]), .ps2_clk(PS2_CLK), .ps2_data(PS2_DAT), .mx(bin_x), .my(bin_y), .btn_click({button_left, button_middle, button_right}));
+	
+reg [23:0] rd_data;	
+ always begin
+  if(color_rd_data == 3'b001) //white
+   rd_data = 24'hFFFFFF;
+  else if(color_rd_data == 3'b010) //black
+   rd_data = 24'h000001;
+  else if(color_rd_data == 3'b011) //red
+   rd_data = 24'hFF0000;
+  else if(color_rd_data == 3'b100) //blue
+   rd_data = 24'h0000FF;
+  else if(color_rd_data == 3'b101) //yellow
+   rd_data = 24'hFFFF00;
+  else if(color_rd_data == 3'b110) //green
+   rd_data = 24'h00FF00; 
+  else if(color_rd_data == 3'b111) //purple
+   rd_data = 24'hFF00FF;
+  else
+   rd_data = 24'h000000; //erase
+ end
 		
 wire mouse_overwrite;
-assign mouse_overwrite = ((VGA_H_CNT >= bin_x-2) & (VGA_H_CNT <= bin_x+2)) & (VGA_V_CNT == bin_y) | (VGA_H_CNT == bin_x) & (VGA_V_CNT >= bin_y-2) & (VGA_V_CNT <= bin_y+2);
+assign mouse_overwrite = ((VGA_H_CNT >= 0-2) & (VGA_H_CNT <= 0+2)) & (VGA_V_CNT == 0) | (VGA_H_CNT == 0) & (VGA_V_CNT >= 0-2) & (VGA_V_CNT <= 0+2);
+//((VGA_H_CNT >= bin_x-2) & (VGA_H_CNT <= bin_x+2)) & (VGA_V_CNT == bin_y) | (VGA_H_CNT == bin_x) & (VGA_V_CNT >= bin_y-2) & (VGA_V_CNT <= bin_y+2);
 
-wire freeze, flop;
+wire freeze, flop;// flop_reset;
 inputff freeze_frame (.clk(CLOCK_50), .reset(~KEY[2]|flop), .in(SW[8]), .out(freeze), .flop(flop));
-
-wire [2:0] color_wr_data; 
-wire [23:0] color_rd_data;
-wire [9:0] color_rd_addr, color_wr_addr;
-assign color_rd_addr = (VGA_H_CNT + VGA_V_CNT * 640)>>>2;
-assign color_wr_addr = (bin_x + bin_y * 640)>>>3;
+//inputff mouse_en (.clk(CLOCK_50), .reset(~KEY[2]|flop), .in(~KEY[2]), .out(), .flop(flop_reset));
+wire [2:0] color_wr_data, color_rd_data;
+wire [14:0] color_rd_addr, color_wr_addr;
+assign color_rd_addr = (VGA_H_CNT>>2) + (VGA_V_CNT * 160)>>2;
+assign color_wr_addr = ~KEY[2] ? count : (bin_x>>2) + (bin_y * 160)>>2;
 //paint over camera
-paint_RAM paint (.clk(CLOCK_50), .reset(~KEY[2]), .wr_addr(color_wr_addr), .wren(button_left), .rd_addr(color_rd_addr), .wr_data(color_wr_ata), .rd_data(color_rd_data));
+paintRAM paint(
+	.clock(CLOCK_50),
+	.data(color_data),
+	.rdaddress(color_rd_addr),
+	.wraddress(color_wr_addr),
+	.wren(button_left),
+	.q(color_rd_data));
+	
+wire [14:0] count;
+wire [2:0] color_data;
+paint_reset paintreset (.clk(CLOCK_50), .reset(~KEY[2] | ~KEY[1]), .count(count));
+	
+assign color_data = ~KEY[2] ? 0 : color_wr_data;
 assign LEDR[0] = button_right;
 assign LEDR[1] = button_left;
 //choose color for paint
