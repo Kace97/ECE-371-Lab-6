@@ -1,9 +1,10 @@
 /* This module deals with metastability for the input. It takes in the 
 input and send it to 2 D flip-flops in series. */
-module inputff #(width = 1) (clk, reset, in, out);
+module inputff #(width = 1) (clk, reset, in, out, flop);
  input logic clk, reset; 
  input logic [width -1:0] in;
  output logic [width -1:0] out;
+ output logic flop;
  logic hold;
  logic [width -1:0] DFF;
  
@@ -12,12 +13,16 @@ module inputff #(width = 1) (clk, reset, in, out);
  if (reset) begin 
  DFF <= 0;
  out <= 0;
+ hold <= 0;
  end
  else begin 
  out <= DFF;
+ hold <= out;
  DFF <= in;
  end
  end
+ 
+ assign flop = ~out&hold;
  
 endmodule
 

@@ -21,7 +21,7 @@ module paint_RAM (clk, reset, wr_addr, wren, rd_addr, wr_data, rd_data);
  input logic [2:0] wr_data;
  output logic [23:0] rd_data;
  
- logic [2:0] RAM [0:640*480];
+ logic [2:0] RAM [0:640*480>>>2];
  logic rd_color;
  logic [19:0] count;
  

@@ -218,7 +218,7 @@ assign CAMERA_I2C_SCL =( I2C_RELEASE  )?  CAMERA_I2C_SCL_AF  : CAMERA_I2C_SCL_MI
  
 //----- RESET RELAY  --		
 RESET_DELAY			u2	(	
-							.iRST  ( KEY[2] ),
+							.iRST  ( KEY[2]&~flop ),
                      .iCLK  ( CLOCK2_50 ),
 							.oRST_0( DLY_RST_0 ),
 							.oRST_1( DLY_RST_1 ),
@@ -264,7 +264,7 @@ sdram_pll u6(
 						
 //------SDRAM CONTROLLER --
 Sdram_Control	   u7	(	//	HOST Side						
-						   .RESET_N     ( KEY[2] ),
+						   .RESET_N     ( KEY[2]&~flop ),
 							.CLK         ( SDRAM_CTRL_CLK ) ,
 							//	FIFO Write Side 1
 							.WR1_DATA    ( LUT_MIPI_PIXEL_D[9:0] ),
@@ -415,13 +415,13 @@ wire mouse_overwrite;
 assign mouse_overwrite = ((VGA_H_CNT >= bin_x-2) & (VGA_H_CNT <= bin_x+2)) & (VGA_V_CNT == bin_y) | (VGA_H_CNT == bin_x) & (VGA_V_CNT >= bin_y-2) & (VGA_V_CNT <= bin_y+2);
 
 wire freeze, flop;
-inputff freeze_frame (.clk(CLOCK_50), .reset(~KEY[2]), .in(SW[8]), .out(freeze));
+inputff freeze_frame (.clk(CLOCK_50), .reset(~KEY[2]|flop), .in(SW[8]), .out(freeze), .flop(flop));
 
 wire [2:0] color_wr_data; 
 wire [23:0] color_rd_data;
 wire [9:0] color_rd_addr, color_wr_addr;
-assign color_rd_addr = VGA_H_CNT + VGA_V_CNT * 640;
-assign color_wr_addr = bin_x + bin_y * 640;
+assign color_rd_addr = (VGA_H_CNT + VGA_V_CNT * 640)>>>2;
+assign color_wr_addr = (bin_x + bin_y * 640)>>>3;
 //paint over camera
 paint_RAM paint (.clk(CLOCK_50), .reset(~KEY[2]), .wr_addr(color_wr_addr), .wren(button_left), .rd_addr(color_rd_addr), .wr_data(color_wr_ata), .rd_data(color_rd_data));
 assign LEDR[0] = button_right;
