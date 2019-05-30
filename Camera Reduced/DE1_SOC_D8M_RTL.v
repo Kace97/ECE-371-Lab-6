@@ -430,30 +430,31 @@ reg [23:0] rd_data;
  end
 		
 wire mouse_overwrite;
-assign mouse_overwrite = ((VGA_H_CNT >= 0-2) & (VGA_H_CNT <= 0+2)) & (VGA_V_CNT == 0) | (VGA_H_CNT == 0) & (VGA_V_CNT >= 0-2) & (VGA_V_CNT <= 0+2);
-//((VGA_H_CNT >= bin_x-2) & (VGA_H_CNT <= bin_x+2)) & (VGA_V_CNT == bin_y) | (VGA_H_CNT == bin_x) & (VGA_V_CNT >= bin_y-2) & (VGA_V_CNT <= bin_y+2);
+assign mouse_overwrite = ((VGA_H_CNT >= bin_x-2) & (VGA_H_CNT <= bin_x+2)) & (VGA_V_CNT == bin_y) | (VGA_H_CNT == bin_x) & (VGA_V_CNT >= bin_y-2) & (VGA_V_CNT <= bin_y+2);
 
 wire freeze, flop;// flop_reset;
 inputff freeze_frame (.clk(CLOCK_50), .reset(~KEY[2]|flop), .in(SW[8]), .out(freeze), .flop(flop));
 //inputff mouse_en (.clk(CLOCK_50), .reset(~KEY[2]|flop), .in(~KEY[2]), .out(), .flop(flop_reset));
 wire [2:0] color_wr_data, color_rd_data;
 wire [14:0] color_rd_addr, color_wr_addr;
-assign color_rd_addr = (VGA_H_CNT>>2) + (VGA_V_CNT * 160)>>2;
-assign color_wr_addr = ~KEY[2] ? count : (bin_x>>2) + (bin_y * 160)>>2;
+assign color_rd_addr = (VGA_H_CNT>>2) + (VGA_V_CNT>>2)*160;
+assign color_wr_addr = ~KEY[2] ? count : (bin_x>>2) + (bin_y>>2)*160;
 //paint over camera
 paintRAM paint(
 	.clock(CLOCK_50),
 	.data(color_data),
 	.rdaddress(color_rd_addr),
 	.wraddress(color_wr_addr),
-	.wren(button_left),
+	.wren((button_left & limit) |~KEY[2] | ~KEY[1]),
 	.q(color_rd_data));
-	
+
+wire limit;
+assign limit = (bin_x < 790) & (bin_x > 167);
 wire [14:0] count;
 wire [2:0] color_data;
 paint_reset paintreset (.clk(CLOCK_50), .reset(~KEY[2] | ~KEY[1]), .count(count));
 	
-assign color_data = ~KEY[2] ? 0 : color_wr_data;
+assign color_data = (~KEY[2] | ~KEY[1]) ? 0 : color_wr_data;
 assign LEDR[0] = button_right;
 assign LEDR[1] = button_left;
 //choose color for paint
