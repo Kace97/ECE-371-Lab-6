@@ -84,14 +84,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "HEX0[1]",
-					"strict" : false
-				},
-				{
-					"name" : "HEX0[2]",
-					"strict" : false
-				},
-				{
 					"name" : "HEX0[3]",
 					"strict" : false
 				},
@@ -452,11 +444,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "CLOCK_50",
+					"name" : "KEY[2]",
 					"strict" : false
 				},
 				{
-					"name" : "KEY[2]",
+					"name" : "CLOCK_50",
 					"strict" : false
 				},
 				{
@@ -525,6 +517,10 @@
 				},
 				{
 					"name" : "SW[9]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[8]",
 					"strict" : false
 				},
 				{

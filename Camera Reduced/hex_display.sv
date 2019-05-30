@@ -48,8 +48,8 @@ module hex_display (data, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
 	HEX4 = ~7'b1111001;
 	HEX3 = ~7'b0111000;
 	HEX2 = ~7'b0111000;
-	HEX1 = ~7'b0111110;
-	HEX0 = ~7'b0001110;
+	HEX1 = ~7'b0111111;
+	HEX0 = '1;
   end //else if
   else if(data == 3'b110) begin //green
    HEX5 = ~7'b1101111;

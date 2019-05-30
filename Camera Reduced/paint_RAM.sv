@@ -15,9 +15,9 @@ Outputs-
 rd_data: the output of the RAM this signal goes through a decoder to 
 change a 3 bit color code to the 3 byte color that is meant to be represented by it
 */
-module paint_RAM #(parameter N = 10) (clk, reset, wr_addr, wren, rd_addr, wr_data, rd_data);
+module paint_RAM (clk, reset, wr_addr, wren, rd_addr, wr_data, rd_data);
  input logic clk, reset, wren;
- input logic [N-1:0] wr_addr, rd_addr;
+ input logic [9:0] wr_addr, rd_addr;
  input logic [2:0] wr_data;
  output logic [23:0] rd_data;
  
@@ -64,5 +64,32 @@ module paint_RAM #(parameter N = 10) (clk, reset, wr_addr, wren, rd_addr, wr_dat
    rd_data = 24'hFF00FF;
   else
    rd_data = 24'h000000; //erase
+ end
+endmodule
+
+module paint_RAM_testbench ();
+ logic clk, reset, wren;
+ logic [9:0] wr_addr, rd_addr;
+ logic [2:0] wr_data;
+ logic [23:0] rd_data;
+ 
+ paint_RAM  dut (clk, reset, wr_addr, wren, rd_addr, wr_data, rd_data);
+ 
+ 
+ parameter CLOCK_period = 100;
+ initial begin
+ clk <= 0;
+ forever #(CLOCK_period/2) clk <= ~clk;
+ end
+ 
+ integer i;
+ initial begin
+ wren <= 1; wr_addr <= 1; wr_data <= 3'b100; @(posedge clk);
+ wr_data <= 3'b101; rd_addr <= 1; @(posedge clk);
+ wr_addr <= 2; wr_data <= 3'b100; @(posedge clk);
+ wr_addr <= 3; wr_data <= 3'b100; rd_addr <= 2; @(posedge clk);
+ wr_addr <= 4; wr_data <= 3'b100; rd_addr <= 3; @(posedge clk);
+ rd_addr <= 4; @(posedge clk);
+ reset <= 1;@(posedge clk);
  end
 endmodule

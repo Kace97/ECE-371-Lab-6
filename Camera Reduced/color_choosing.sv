@@ -1,14 +1,6 @@
-module color_choosing (clk, reset, button_right, color);
- input logic clk, reset, button_right;
+module color_choosing (clk, reset, in, color);
+ input logic clk, reset, in;
  output logic [2:0] color;
- 
- //seperate the right clicks of the machine
- logic in, hold;
- always_ff @(posedge clk) begin
-	hold <= button_right;//hold always holds the previous value of button right
-	if (~button_right & hold) in <= 1'b1;
-	else in <= 1'b0;
-	end//ff
  
  enum {white, black, red, blue, yellow, green, purple, erase} ps, ns;
  

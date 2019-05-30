@@ -268,7 +268,7 @@ Sdram_Control	   u7	(	//	HOST Side
 							.CLK         ( SDRAM_CTRL_CLK ) ,
 							//	FIFO Write Side 1
 							.WR1_DATA    ( LUT_MIPI_PIXEL_D[9:0] ),
-							.WR1         ( LUT_MIPI_PIXEL_HS & LUT_MIPI_PIXEL_VS) ,
+							.WR1         ( LUT_MIPI_PIXEL_HS & LUT_MIPI_PIXEL_VS & ~freeze) ,
 							
 							.WR1_ADDR    ( 0 ),
                      .WR1_MAX_ADDR( 640*480 ),
@@ -398,7 +398,7 @@ CLOCKMEM  ck3 ( .CLK(MIPI_PIXEL_CLK_)   ,.CLK_FREQ  (25000000  ) , . CK_1HZ (D8M
 wire button_left, button_right, button_middle;
 wire [9:0] bin_x, bin_y;
 //add the mouse to be displayed on the monitor
-ps2 mouse(.start(1'b1),         // transmit instrucions to device
+ps2 mouse(.start(1'b0),         // transmit instrucions to device
 		.reset(~KEY[2]),         // FSM reset signal
 		.CLOCK_50(CLOCK_50),      //clock source
 		.PS2_CLK(PS2_CLK),       //ps2_clock signal inout
@@ -415,7 +415,7 @@ wire mouse_overwrite;
 assign mouse_overwrite = ((VGA_H_CNT >= bin_x-2) & (VGA_H_CNT <= bin_x+2)) & (VGA_V_CNT == bin_y) | (VGA_H_CNT == bin_x) & (VGA_V_CNT >= bin_y-2) & (VGA_V_CNT <= bin_y+2);
 
 wire freeze, flop;
-inputff freeze_frame (.clk(CLOCK_50), .reset(~KEY[2]), .in(SW[8]), .out(freeze), .flop(flop));
+inputff freeze_frame (.clk(CLOCK_50), .reset(~KEY[2]), .in(SW[8]), .out(freeze));
 
 wire [2:0] color_wr_data; 
 wire [23:0] color_rd_data;
@@ -427,7 +427,10 @@ paint_RAM paint (.clk(CLOCK_50), .reset(~KEY[2]), .wr_addr(color_wr_addr), .wren
 assign LEDR[0] = button_right;
 assign LEDR[1] = button_left;
 //choose color for paint
-color_choosing colorChoice (.clk(CLOCK_50), .reset(~KEY[2]), .button_right(button_right), .color(color_wr_data));
+color_choosing colorChoice (.clk(CLOCK_50), .reset(~KEY[2]), .in(right_button), .color(color_wr_data));
+
+wire right_button;
+inpuT mouse_right (.clk(CLOCK_50), .Reset(~KEY[2]), .in(button_right), .out(right_button));
 
 //hex display
 hex_display hex (.data(color_wr_data), .HEX0(HEX0), .HEX1(HEX1), .HEX2(HEX2), .HEX3(HEX3), .HEX4(HEX4), .HEX5(HEX5));
