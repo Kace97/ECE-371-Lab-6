@@ -368,7 +368,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "AUD_ADCLRCK",
+					"name" : "AUD_BCLK",
 					"strict" : false
 				},
 				{

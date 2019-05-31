@@ -467,8 +467,94 @@ inpuT mouse_right (.clk(CLOCK_50), .Reset(~KEY[2]), .in(button_right), .out(righ
 hex_display hex (.data(color_wr_data), .HEX0(HEX0), .HEX1(HEX1), .HEX2(HEX2), .HEX3(HEX3), .HEX4(HEX4), .HEX5(HEX5));
 
 //audio
-part1 audio (.CLOCK_50(CLOCK_50), .CLOCK2_50(CLOCK2_50), .KEY(KEY[3:0]), .FPGA_I2C_SCLK(FPGA_I2C_SCLK), .FPGA_I2C_SDAT(FPGA_I2C_SDAT), .AUD_XCK(AUD_XCK), 
-		        .AUD_DACLRCK(AUD_DACLRCK), .AUD_ADCLRCK(AUD_ADCLRCK), .AUD_BCLK(AUD_ADCLRCK), .AUD_ADCDAT(AUD_ADCDAT), .AUD_DACDAT(AUD_DACDAT), .SW({button_left,button_right}));
+wire read_ready, write_ready, read, write;
+	wire [23:0] readdata_left, readdata_right;
+	wire [23:0] writedata_left, writedata_right;
+	wire reset = ~KEY[0];
+
+	/////////////////////////////////
+	// Your code goes here 
+	/////////////////////////////////
+	
+	wire [23:0] wave_left, wave_right;
+	reg [23:0]	wave_sel;
+	always begin
+		if(button_left) wave_sel = wave_left;
+		else if (button_right) wave_sel = wave_right;
+		else wave_sel =  0;
+	
+	end//always
+	
+	//assignments
+	wave_generator wave1 (.clk(CLOCK_50), .reset(reset), .en(1'b1), .wave(wave_left));
+		defparam wave1.N =15;
+	wave_generator wave2 (.clk(CLOCK_50), .reset(reset), .en(1'b1), .wave(wave_right));
+	
+	
+	assign writedata_left = wave_sel;
+	assign writedata_right = wave_sel;
+	assign read = read_ready;
+	assign write = write_ready;
+	
+/////////////////////////////////////////////////////////////////////////////////
+// Audio CODEC interface. 
+//
+// The interface consists of the following wires:
+// read_ready, write_ready - CODEC ready for read/write operation 
+// readdata_left, readdata_right - left and right channel data from the CODEC
+// read - send data from the CODEC (both channels)
+// writedata_left, writedata_right - left and right channel data to the CODEC
+// write - send data to the CODEC (both channels)
+// AUD_* - should connect to top-level entity I/O of the same name.
+//         These signals go directly to the Audio CODEC
+// I2C_* - should connect to top-level entity I/O of the same name.
+//         These signals go directly to the Audio/Video Config module
+/////////////////////////////////////////////////////////////////////////////////
+	clock_generator my_clock_gen(
+		// inputs
+		CLOCK2_50,
+		reset,
+
+		// outputs
+		AUD_XCK
+	);
+
+	audio_and_video_config cfg(
+		// Inputs
+		CLOCK_50,
+		reset,
+
+		// Bidirectionals
+		FPGA_I2C_SDAT,
+		FPGA_I2C_SCLK
+	);
+
+	audio_codec codec(
+		// Inputs
+		CLOCK_50,
+		reset,
+
+		read,	write,
+		writedata_left, writedata_right,
+
+		AUD_ADCDAT,
+
+		// Bidirectionals
+		AUD_BCLK,
+		AUD_ADCLRCK,
+		AUD_DACLRCK,
+
+		// Outputs
+		read_ready, write_ready,
+		readdata_left, readdata_right,
+		AUD_DACDAT
+	);			  
+				  
+				  
+				  
+				  
+				  
+				  
 endmodule
 
 
