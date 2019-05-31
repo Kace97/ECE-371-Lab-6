@@ -465,6 +465,10 @@ inpuT mouse_right (.clk(CLOCK_50), .Reset(~KEY[2]), .in(button_right), .out(righ
 
 //hex display
 hex_display hex (.data(color_wr_data), .HEX0(HEX0), .HEX1(HEX1), .HEX2(HEX2), .HEX3(HEX3), .HEX4(HEX4), .HEX5(HEX5));
+
+//audio
+part1 audio (.CLOCK_50(CLOCK_50), .CLOCK2_50(CLOCK2_50), .KEY(KEY[3:0]), .FPGA_I2C_SCLK(FPGA_I2C_SCLK), .FPGA_I2C_SDAT(FPGA_I2C_SDAT), .AUD_XCK(AUD_XCK), 
+		        .AUD_DACLRCK(AUD_DACLRCK), .AUD_ADCLRCK(AUD_ADCLRCK), .AUD_BCLK(AUD_ADCLRCK), .AUD_ADCDAT(AUD_ADCDAT), .AUD_DACDAT(AUD_DACDAT), .SW({button_left,button_right}));
 endmodule
 
 
