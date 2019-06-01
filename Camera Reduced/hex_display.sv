@@ -1,3 +1,9 @@
+/*
+Summary:
+This module is responsible for displaying the current color that is selecte by 
+the system on the HEX displays. 
+
+*/
 module hex_display (data, HEX0, HEX1, HEX2, HEX3, HEX4, HEX5);
  input logic [2:0] data;
  output logic [6:0] HEX0, HEX1, HEX2, HEX3, HEX4, HEX5;

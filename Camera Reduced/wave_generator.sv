@@ -1,3 +1,7 @@
+/*
+this module is responsible for generating a steady sound wave to be sent to the 
+audio codec in order to allow the speaker to produce a sound.
+*/
 module wave_generator #(parameter N = 16) (clk, reset, en, wave);
 	input logic clk, reset, en;
 	output logic signed [23:0] wave;

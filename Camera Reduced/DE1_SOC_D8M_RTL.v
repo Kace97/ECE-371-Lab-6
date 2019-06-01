@@ -409,6 +409,7 @@ ps2 mouse(.start(~KEY[0]),         // transmit instrucions to device
 		.bin_x(bin_x),         //binned X position with hysteresis
 		.bin_y(bin_y)        );
 	
+//decode the output of the paint RAM from a 3 bit output, to a 3 byte color
 reg [23:0] rd_data;	
  always begin
   if(color_rd_data == 3'b001) //white
@@ -429,12 +430,15 @@ reg [23:0] rd_data;
    rd_data = 24'h000000; //erase
  end
 		
+//create the cursor, and place it on the screen
 wire mouse_overwrite;
 assign mouse_overwrite = ((VGA_H_CNT >= bin_x-2) & (VGA_H_CNT <= bin_x+2)) & (VGA_V_CNT == bin_y) | (VGA_H_CNT == bin_x) & (VGA_V_CNT >= bin_y-2) & (VGA_V_CNT <= bin_y+2);
 
+//create a module for capturing what is currently displayed on the VGA
 wire freeze, flop;// flop_reset;
 inputff freeze_frame (.clk(CLOCK_50), .reset(~KEY[2]|flop), .in(SW[8]), .out(freeze), .flop(flop));
-//inputff mouse_en (.clk(CLOCK_50), .reset(~KEY[2]|flop), .in(~KEY[2]), .out(), .flop(flop_reset));
+
+//instantiate the paint ram, and send it to the RAW2RGB module to be processed.
 wire [2:0] color_wr_data, color_rd_data;
 wire [14:0] color_rd_addr, color_wr_addr;
 assign color_rd_addr = (VGA_H_CNT>>2) + (VGA_V_CNT>>2)*160;
@@ -448,10 +452,12 @@ paintRAM paint(
 	.wren((button_left & limit) |~KEY[2] | ~KEY[1]),
 	.q(color_rd_data));
 
+//prevent the user from drawing when the cursor is off the screen
 wire limit;
 assign limit = (bin_x < 790) & (bin_x > 167);
 wire [14:0] count;
 wire [2:0] color_data;
+//instantiate the module for reseting the paint RAM
 paint_reset paintreset (.clk(CLOCK_50), .reset(~KEY[2] | ~KEY[1]), .count(count));
 	
 assign color_data = (~KEY[2] | ~KEY[1]) ? 0 : color_wr_data;
@@ -473,7 +479,9 @@ wire read_ready, write_ready, read, write;
 	wire reset = ~KEY[0];
 
 	/////////////////////////////////
-	// Your code goes here 
+	//below we create 2 distinct wave generators, one is responsible
+	//for producing a sound when the left mouse button is pressed, and the other
+	//for when the right mouse button is pressed
 	/////////////////////////////////
 	
 	wire [23:0] wave_left, wave_right;
@@ -495,7 +503,11 @@ wire read_ready, write_ready, read, write;
 	assign writedata_right = wave_sel;
 	assign read = read_ready;
 	assign write = write_ready;
-	
+/*
+we were unable to instantiate the part one module, despite the signal returning
+the correct values in signal tap. as a result we concatenated the logic
+in the part one module to the top level.
+*/
 /////////////////////////////////////////////////////////////////////////////////
 // Audio CODEC interface. 
 //

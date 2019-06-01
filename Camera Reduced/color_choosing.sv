@@ -1,9 +1,21 @@
+/*
+Summary:
+This module is meant to use inputs to increment between 3 bit color codes, to
+allow a user to select one of several outputs.
+Inputs:
+	clk - creates the timing for the module
+	reset - resets the output color to white
+	in - when this signal is true the color output increments
+Outputs:
+	Color - the color code output
+
+*/
 module color_choosing (clk, reset, in, color);
  input logic clk, reset, in;
  output logic [2:0] color;
  
  enum {white, black, red, blue, yellow, green, purple, erase} ps, ns;
- 
+ //increment between colors on inputs.
  always_comb begin
   case(ps)
    white: if(in) ns = black;
@@ -24,14 +36,14 @@ module color_choosing (clk, reset, in, color);
 		else ns = erase;
   endcase
  end
- 
+ //if reset go back to choosing white.
  always_ff @(posedge clk) begin
   if (reset)
    ps <= white;
   else
    ps <= ns;
  end
- 
+ //creeate a 3-bit code for each color
  always_comb begin
   if(ps== erase)
    color = 3'b000;
